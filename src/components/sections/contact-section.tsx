@@ -1,7 +1,7 @@
-import { Mail, MapPin } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
+import Icon from "@/components/ui/icon"
 
 export function ContactSection() {
   const { ref, isVisible } = useReveal(0.3)
@@ -44,27 +44,27 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-2 font-sans text-4xl font-light leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
-                Давайте
+                Запишитесь
                 <br />
-                поговорим
+                к нам
               </h2>
-              <p className="font-mono text-xs text-foreground/60 md:text-base">/ Свяжитесь с нами</p>
+              <p className="font-mono text-xs text-foreground/60 md:text-base">/ Первый визит — бесплатная консультация</p>
             </div>
 
             <div className="space-y-4 md:space-y-8">
               <a
-                href="mailto:info@flowrise.dev"
+                href="tel:+74951234567"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
                 <div className="mb-1 flex items-center gap-2">
-                  <Mail className="h-3 w-3 text-foreground/60" />
-                  <span className="font-mono text-xs text-foreground/60">Email</span>
+                  <Icon name="Phone" size={12} className="text-foreground/60" />
+                  <span className="font-mono text-xs text-foreground/60">Телефон</span>
                 </div>
                 <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  info@flowrise.dev
+                  +7 (495) 123-45-67
                 </p>
               </a>
 
@@ -75,10 +75,10 @@ export function ContactSection() {
                 style={{ transitionDelay: "350ms" }}
               >
                 <div className="mb-1 flex items-center gap-2">
-                  <MapPin className="h-3 w-3 text-foreground/60" />
-                  <span className="font-mono text-xs text-foreground/60">Локация</span>
+                  <Icon name="MapPin" size={12} className="text-foreground/60" />
+                  <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">Москва, Россия</p>
+                <p className="text-base text-foreground md:text-2xl">Москва, ул. Улыбки, 1</p>
               </div>
 
               <div
@@ -87,7 +87,7 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                {["Telegram", "VK", "LinkedIn", "GitHub"].map((social) => (
+                {["Telegram", "VK", "WhatsApp"].map((social) => (
                   <a
                     key={social}
                     href="#"
@@ -150,7 +150,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Расскажите о вашем проекте..."
+                  placeholder="Что вас беспокоит или какую процедуру хотите записаться?"
                 />
               </div>
 
@@ -165,10 +165,10 @@ export function ContactSection() {
                   size="lg"
                   className="w-full disabled:opacity-50"
                 >
-                  {isSubmitting ? "Отправка..." : "Отправить"}
+                  {isSubmitting ? "Отправляем..." : "Записаться на приём"}
                 </MagneticButton>
                 {submitSuccess && (
-                  <p className="mt-3 text-center font-mono text-sm text-foreground/80">Сообщение отправлено!</p>
+                  <p className="mt-3 text-center font-mono text-sm text-foreground/80">Заявка отправлена! Мы перезвоним в ближайшее время 🧚</p>
                 )}
               </div>
             </form>
