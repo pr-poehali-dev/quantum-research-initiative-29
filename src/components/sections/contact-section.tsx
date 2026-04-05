@@ -8,25 +8,20 @@ export function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [showDirections, setShowDirections] = useState(false)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       return
     }
 
     setIsSubmitting(true)
-
-    // Simulate form submission (replace with actual API call later)
     await new Promise((resolve) => setTimeout(resolve, 1500))
-
     setIsSubmitting(false)
     setSubmitSuccess(true)
     setFormData({ name: "", email: "", message: "" })
-
-    // Reset success message after 5 seconds
     setTimeout(() => setSubmitSuccess(false), 5000)
   }
 
@@ -37,9 +32,9 @@ export function ContactSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
-          <div className="flex flex-col justify-center overflow-y-auto">
+          <div className="flex flex-col justify-center overflow-y-auto max-h-screen py-4">
             <div
-              className={`mb-6 transition-all duration-700 md:mb-12 ${
+              className={`mb-6 transition-all duration-700 md:mb-8 ${
                 isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
               }`}
             >
@@ -51,7 +46,8 @@ export function ContactSection() {
               <p className="font-mono text-xs text-foreground/60 md:text-base">/ Первый визит — бесплатная консультация</p>
             </div>
 
-            <div className="space-y-4 md:space-y-8">
+            <div className="space-y-4 md:space-y-6">
+              {/* Телефоны */}
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
@@ -63,15 +59,16 @@ export function ContactSection() {
                   <span className="font-mono text-xs text-foreground/60">Телефон</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+79105094063" className="text-base text-foreground transition-colors hover:text-foreground/70 md:text-xl">
-                    +7 (910) 509-40-63
-                  </a>
                   <a href="tel:+74912954202" className="text-base text-foreground transition-colors hover:text-foreground/70 md:text-xl">
                     +7 (4912) 95-42-02
+                  </a>
+                  <a href="tel:+79105094063" className="text-base text-foreground transition-colors hover:text-foreground/70 md:text-xl">
+                    +7 (910) 509-40-63
                   </a>
                 </div>
               </div>
 
+              {/* Адрес */}
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
@@ -82,38 +79,80 @@ export function ContactSection() {
                   <Icon name="MapPin" size={12} className="text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">Рязань, ул. Маяковского, 57</p>
-                <p className="mt-1 font-mono text-xs text-foreground/50">с торца дома</p>
+                <p className="text-base text-foreground md:text-xl">Рязань, ул. Маяковского, 57</p>
+                <p className="mt-0.5 font-mono text-xs text-foreground/50">1 этаж, с торца дома, вход со стороны автостоянки</p>
+                <p className="mt-0.5 font-mono text-xs text-foreground/50">напротив Центрального рынка</p>
               </div>
 
+              {/* Карта */}
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
                 }`}
-                style={{ transitionDelay: "500ms" }}
+                style={{ transitionDelay: "450ms" }}
               >
-                <a
-                  href="https://yandex.ru/maps/?ll=39.726219,54.629562&z=17&pt=39.726219,54.629562&text=Рязань%2C+ул.+Маяковского%2C+57"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 overflow-hidden rounded-lg border border-foreground/10 transition-all hover:border-foreground/30"
-                >
-                  <iframe
-                    src="https://yandex.ru/map-widget/v1/?ll=39.726219%2C54.629562&z=16&pt=39.726219%2C54.629562&l=map"
-                    className="h-36 w-full rounded-lg"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Карта проезда"
-                  />
-                </a>
-                <p className="mt-1.5 font-mono text-xs text-foreground/40">Нажмите на карту, чтобы открыть маршрут</p>
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=39.726219%2C54.629562&z=16&pt=39.726219%2C54.629562&l=map"
+                  className="h-32 w-full rounded-lg border border-foreground/10"
+                  frameBorder="0"
+                  allowFullScreen
+                  title="Карта проезда"
+                />
               </div>
 
+              {/* Как добраться — сворачиваемый блок */}
               <div
-                className={`flex gap-2 pt-2 transition-all duration-700 md:pt-4 ${
+                className={`transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                }`}
+                style={{ transitionDelay: "550ms" }}
+              >
+                <button
+                  onClick={() => setShowDirections(!showDirections)}
+                  className="flex items-center gap-2 font-mono text-xs text-foreground/60 hover:text-foreground/90 transition-colors"
+                >
+                  <Icon name={showDirections ? "ChevronUp" : "ChevronDown"} size={12} />
+                  Как добраться
+                </button>
+
+                {showDirections && (
+                  <div className="mt-3 space-y-3 rounded-lg border border-foreground/10 bg-foreground/5 p-4 text-xs text-foreground/80 leading-relaxed">
+                    <div>
+                      <p className="mb-1 font-mono text-foreground/50 uppercase tracking-wider text-[10px]">Автобусы</p>
+                      <p>№ 4, 13, 15, 16, 20, 21, 24, 57</p>
+                    </div>
+                    <div>
+                      <p className="mb-1 font-mono text-foreground/50 uppercase tracking-wider text-[10px]">Троллейбусы</p>
+                      <p>№ 3, 5, 8, 16</p>
+                    </div>
+                    <div>
+                      <p className="mb-1 font-mono text-foreground/50 uppercase tracking-wider text-[10px]">Маршрутные такси</p>
+                      <p>№ 77, 98</p>
+                    </div>
+                    <div className="border-t border-foreground/10 pt-3">
+                      <p className="mb-1 font-mono text-foreground/50 uppercase tracking-wider text-[10px]">Маршрут</p>
+                      <p>Остановка «Центральный рынок» → 200 м по ул. Маяковского до д. 57.</p>
+                      <p className="mt-1">Или остановка «Стадион Спартак» (авт. те же + марш. № 88, тролл. № 16) → ~4 мин пешком.</p>
+                    </div>
+                    <a
+                      href="https://yandex.ru/maps/?ll=39.726219,54.629562&z=17&pt=39.726219,54.629562"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-foreground/60 hover:text-foreground/90 transition-colors border-b border-foreground/20"
+                    >
+                      Открыть маршрут в Яндекс Картах
+                      <Icon name="ExternalLink" size={10} />
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Соцсети */}
+              <div
+                className={`flex gap-2 transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
                 }`}
-                style={{ transitionDelay: "500ms" }}
+                style={{ transitionDelay: "650ms" }}
               >
                 {["Telegram", "VK", "WhatsApp"].map((social) => (
                   <a
