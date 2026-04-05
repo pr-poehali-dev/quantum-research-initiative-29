@@ -20,6 +20,12 @@ export function ServicesSection() {
             Терапевтическая стоматология
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Лечим правильно, честно, с результатом</p>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+            <span className="font-mono text-xs text-foreground/50">Приём ведут:</span>
+            <span className="font-mono text-xs text-foreground/70">Увыхмина Н.А. <span className="text-foreground/40">· стаж 35 лет · отличник стоматологии</span></span>
+            <span className="font-mono text-xs text-foreground/70">Краснова А.В. <span className="text-foreground/40">· стаж 15 лет</span></span>
+            <span className="font-mono text-xs text-foreground/70">Судникова Д.В. <span className="text-foreground/40">· стаж 3 года</span></span>
+          </div>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
