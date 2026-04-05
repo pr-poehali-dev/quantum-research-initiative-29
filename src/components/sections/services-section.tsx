@@ -54,22 +54,32 @@ export function ServicesSection() {
             {
               title: "Лечение кариеса",
               description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии",
+              price: "от 3 500 ₽",
               direction: "top",
             },
             {
               title: "Эстетическая реставрация и композитные виниры",
               description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров",
+              price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽",
               direction: "right",
             },
             {
               title: "Лечение пульпита и периодонтита",
               description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли",
+              price: "от 9 500 ₽",
               direction: "left",
             },
             {
               title: "Перелечивание каналов под микроскопом",
               description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно",
+              price: "от 12 000 ₽",
               direction: "bottom",
+            },
+            {
+              title: "Гигиена и профилактика",
+              description: "Профессиональная чистка зубов, снятие налёта и камня — залог здоровья и красивой улыбки",
+              price: "от 150 ₽ за зуб",
+              direction: "left",
             },
           ].map((service, i) => (
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
@@ -85,7 +95,7 @@ function ServiceCard({
   index,
   isVisible,
 }: {
-  service: { title: string; description: string; direction: string }
+  service: { title: string; description: string; price: string; direction: string }
   index: number
   isVisible: boolean
 }) {
@@ -120,6 +130,7 @@ function ServiceCard({
       </div>
       <h3 className="mb-2 font-sans text-xl font-semibold text-foreground md:text-2xl">{service.title}</h3>
       <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
+      <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{service.price}</p>
     </div>
   )
 }
