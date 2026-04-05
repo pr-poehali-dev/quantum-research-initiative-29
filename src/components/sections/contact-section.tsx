@@ -52,21 +52,25 @@ export function ContactSection() {
             </div>
 
             <div className="space-y-4 md:space-y-8">
-              <a
-                href="tel:+74951234567"
-                className={`group block transition-all duration-700 ${
+              <div
+                className={`transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <div className="mb-1 flex items-center gap-2">
+                <div className="mb-2 flex items-center gap-2">
                   <Icon name="Phone" size={12} className="text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Телефон</span>
                 </div>
-                <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  +7 (495) 123-45-67
-                </p>
-              </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+79105094063" className="text-base text-foreground transition-colors hover:text-foreground/70 md:text-xl">
+                    +7 (910) 509-40-63
+                  </a>
+                  <a href="tel:+74912954202" className="text-base text-foreground transition-colors hover:text-foreground/70 md:text-xl">
+                    +7 (4912) 95-42-02
+                  </a>
+                </div>
+              </div>
 
               <div
                 className={`transition-all duration-700 ${
