@@ -80,7 +80,7 @@ export function ContactSection() {
                   <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
                 <p className="text-base text-foreground md:text-xl">Рязань, ул. Маяковского, 57</p>
-                <p className="mt-0.5 font-mono text-xs text-foreground/50">1 этаж, с торца дома, вход со стороны автостоянки</p>
+                <p className="mt-0.5 font-mono text-xs text-foreground/50">1 этаж, с торца дома</p>
                 <p className="mt-0.5 font-mono text-xs text-foreground/50">напротив Центрального рынка</p>
               </div>
 
