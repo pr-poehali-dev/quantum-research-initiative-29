@@ -37,7 +37,7 @@ export function ContactSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center overflow-y-auto">
             <div
               className={`mb-6 transition-all duration-700 md:mb-12 ${
                 isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
@@ -78,7 +78,31 @@ export function ContactSection() {
                   <Icon name="MapPin" size={12} className="text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">Москва, ул. Улыбки, 1</p>
+                <p className="text-base text-foreground md:text-2xl">Рязань, ул. Маяковского, 57</p>
+                <p className="mt-1 font-mono text-xs text-foreground/50">с торца дома</p>
+              </div>
+
+              <div
+                className={`transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                <a
+                  href="https://yandex.ru/maps/?ll=39.726219,54.629562&z=17&pt=39.726219,54.629562&text=Рязань%2C+ул.+Маяковского%2C+57"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 overflow-hidden rounded-lg border border-foreground/10 transition-all hover:border-foreground/30"
+                >
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=39.726219%2C54.629562&z=16&pt=39.726219%2C54.629562&l=map"
+                    className="h-36 w-full rounded-lg"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Карта проезда"
+                  />
+                </a>
+                <p className="mt-1.5 font-mono text-xs text-foreground/40">Нажмите на карту, чтобы открыть маршрут</p>
               </div>
 
               <div
