@@ -27,10 +27,25 @@ export function ChildrenSection() {
           </h2>
           <p className="mb-5 font-mono text-sm text-foreground/60 md:text-base">/ Бережно, без стресса, с заботой</p>
 
-          <p className="max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-            Лечение детей и подростков в доброжелательной атмосфере нашей клиники не травмирует психику Вашего ребёнка
-            и гарантирует качество лечения.
-          </p>
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
+            <div className="inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
+              <div>
+                <p className="text-sm font-semibold text-foreground md:text-base">
+                  Краснова Александра Васильевна
+                  <span className="ml-2 font-normal text-foreground/50">· стаж 15 лет</span>
+                </p>
+                <p className="mt-0.5 font-mono text-xs text-foreground/50">
+                  Врач-стоматолог терапевт · Детский стоматолог · Ортодонт
+                </p>
+              </div>
+            </div>
+
+            <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
+              Лечение детей и подростков в доброжелательной атмосфере нашей клиники не травмирует психику Вашего ребёнка
+              и гарантирует качество лечения.
+            </p>
+          </div>
         </div>
 
         <div
@@ -72,23 +87,7 @@ export function ChildrenSection() {
           ))}
         </div>
 
-        <div
-          className={`mt-8 transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <div className="inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
-            <p className="text-sm font-semibold text-foreground md:text-base">
-              Краснова Александра Васильевна
-              <span className="ml-2 font-normal text-foreground/50">· стаж 15 лет</span>
-            </p>
-            <p className="font-mono text-xs text-foreground/50">
-              Врач-стоматолог терапевт · Детский стоматолог · Ортодонт
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   )
