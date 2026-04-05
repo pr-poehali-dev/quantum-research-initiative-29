@@ -43,7 +43,7 @@ export function ServicesSection() {
             <div className="max-w-sm rounded-xl border px-5 py-4" style={{ borderColor: "#f472b630", background: "linear-gradient(135deg, #f472b608, #a78bfa08)" }}>
               <p className="mb-1 font-sans text-base font-bold text-foreground md:text-lg">Вас направили на удаление? Не спешите!</p>
               <p className="text-sm leading-relaxed text-foreground/70">
-                Наши врачи постараются спасти зуб, которому «подписали приговор». А эстетические реставрации вернут вам желание улыбаться!
+                Наши врачи постараются спасти зуб, которому «подписали приговор». А эстетические реставрации вернут Вам желание улыбаться!
               </p>
             </div>
           </div>

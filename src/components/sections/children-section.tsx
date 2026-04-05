@@ -28,7 +28,7 @@ export function ChildrenSection() {
           <p className="mb-5 font-mono text-sm text-foreground/60 md:text-base">/ Бережно, без стресса, с заботой</p>
 
           <p className="max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-            Лечение детей и подростков в доброжелательной атмосфере нашей клиники не травмирует психику вашего ребёнка
+            Лечение детей и подростков в доброжелательной атмосфере нашей клиники не травмирует психику Вашего ребёнка
             и гарантирует качество лечения.
           </p>
         </div>
