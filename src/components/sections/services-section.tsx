@@ -20,11 +20,23 @@ export function ServicesSection() {
             Терапевтическая стоматология
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Лечим правильно, честно, с результатом</p>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1">
-            <span className="font-mono text-xs text-foreground/50">Приём ведут:</span>
-            <span className="font-mono text-xs text-foreground/70">Увыхмина Н.А. <span className="text-foreground/40">· стаж 35 лет · отличник стоматологии</span></span>
-            <span className="font-mono text-xs text-foreground/70">Краснова А.В. <span className="text-foreground/40">· стаж 15 лет</span></span>
-            <span className="font-mono text-xs text-foreground/70">Судникова Д.В. <span className="text-foreground/40">· стаж 3 года</span></span>
+          <div className="mt-5 inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведут</span>
+            <div className="flex flex-col gap-1.5">
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Увыхмина Наталья Алексеевна
+                <span className="ml-2 font-normal text-foreground/50">· стаж 35 лет ·</span>
+                <span className="ml-1 font-mono text-xs" style={{ color: "#c084fc" }}>отличник стоматологии</span>
+              </p>
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Краснова Александра Васильевна
+                <span className="ml-2 font-normal text-foreground/50">· стаж 15 лет</span>
+              </p>
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Судникова Дарья Витальевна
+                <span className="ml-2 font-normal text-foreground/50">· стаж 3 года</span>
+              </p>
+            </div>
           </div>
         </div>
 
