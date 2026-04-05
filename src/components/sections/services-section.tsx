@@ -49,7 +49,7 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-5 lg:gap-x-10">
           {[
             {
               title: "Лечение кариеса",
