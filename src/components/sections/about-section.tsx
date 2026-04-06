@@ -45,9 +45,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           {/* Right side - Stats with creative layout */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "3000+", label: "Пациентов", sublabel: "Доверяют нам свои улыбки", direction: "right" },
-              { value: "10", label: "Лет", sublabel: "Опыта и заботы", direction: "left" },
-              { value: "8", label: "Врачей", sublabel: "Высшей квалификации", direction: "right" },
+              { value: "20", label: "Лет", sublabel: "Успешной работы", direction: "right" },
+              { value: "5", label: "Врачей", sublabel: "Высшей квалификации", direction: "left" },
+              { value: "10 000+", label: "Пациентов", sublabel: "Доверяют нам свои улыбки", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
