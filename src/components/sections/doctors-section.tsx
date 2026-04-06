@@ -2,10 +2,17 @@ import { useReveal } from "@/hooks/use-reveal"
 
 const doctors = [
   {
+    name: "Увыхмина Наталья Алексеевна",
+    experience: "Стаж более 35 лет",
+    specialties: ["Врач стоматолог-терапевт", "Эндодонтист"],
+    badge: "Отличник стоматологии",
+    direction: "top",
+  },
+  {
     name: "Краснова Александра Васильевна",
     experience: "Стаж более 15 лет",
     specialties: ["Врач стоматолог-терапевт", "Детский стоматолог", "Ортодонт", "Эндодонтист", "Микроскопист"],
-    direction: "top",
+    direction: "right",
   },
   {
     name: "Судникова Дарья Витальевна",
@@ -93,6 +100,18 @@ export function DoctorsSection() {
                     <span key={j} className="font-mono text-xs text-foreground/60">· {s}</span>
                   ))}
                 </div>
+                {"badge" in doctor && doctor.badge && (
+                  <span
+                    className="mt-3 inline-block rounded-full px-3 py-1 text-xs font-medium"
+                    style={{
+                      background: "linear-gradient(135deg, #f472b620, #a78bfa20)",
+                      border: "1px solid #a78bfa40",
+                      color: "#c084fc",
+                    }}
+                  >
+                    {doctor.badge}
+                  </span>
+                )}
               </div>
             )
           })}
