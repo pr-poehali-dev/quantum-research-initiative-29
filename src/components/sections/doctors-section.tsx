@@ -2,22 +2,28 @@ import { useReveal } from "@/hooks/use-reveal"
 
 const doctors = [
   {
-    name: "Увыхмина Наталья Алексеевна",
-    experience: "Стаж более 35 лет",
-    badge: "Отличник стоматологии",
-    direction: "top",
-  },
-  {
     name: "Краснова Александра Васильевна",
     experience: "Стаж более 15 лет",
-    badge: null,
-    direction: "right",
+    specialties: ["Врач стоматолог-терапевт", "Детский стоматолог", "Ортодонт", "Эндодонтист", "Микроскопист"],
+    direction: "top",
   },
   {
     name: "Судникова Дарья Витальевна",
     experience: "Стаж более 3 лет",
-    badge: null,
+    specialties: ["Врач стоматолог-терапевт", "Эндодонтист", "Микроскопист"],
+    direction: "right",
+  },
+  {
+    name: "Крецу Ион Иванович",
+    experience: "Стаж более 12 лет",
+    specialties: ["Врач стоматолог-ортопед"],
     direction: "bottom",
+  },
+  {
+    name: "Демин Ефим Степанович",
+    experience: "Стаж более 12 лет",
+    specialties: ["Врач стоматолог-хирург", "Имплантолог"],
+    direction: "left",
   },
 ]
 
@@ -31,7 +37,7 @@ export function DoctorsSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-10 transition-all duration-700 md:mb-14 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
@@ -44,12 +50,12 @@ export function DoctorsSection() {
               backgroundClip: "text",
             }}
           >
-            Наши врачи
+            Наша команда
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Приём ведут опытные специалисты</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Опытные специалисты вашей улыбки</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3 md:gap-12">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-10">
           {doctors.map((doctor, i) => {
             const getRevealClass = () => {
               if (!isVisible) {
@@ -57,7 +63,7 @@ export function DoctorsSection() {
                   case "top": return "-translate-y-16 opacity-0"
                   case "right": return "translate-x-16 opacity-0"
                   case "bottom": return "translate-y-16 opacity-0"
-                  default: return "translate-y-12 opacity-0"
+                  default: return "-translate-x-16 opacity-0"
                 }
               }
               return "translate-x-0 translate-y-0 opacity-100"
@@ -69,7 +75,7 @@ export function DoctorsSection() {
                 className={`group transition-all duration-700 ${getRevealClass()}`}
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-2xl font-bold text-foreground/30">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-xl font-bold text-foreground/30">
                   {doctor.name.charAt(0)}
                 </div>
 
@@ -78,22 +84,15 @@ export function DoctorsSection() {
                   <span className="font-mono text-xs text-foreground/60">0{i + 1}</span>
                 </div>
 
-                <h3 className="mb-1 font-sans text-xl font-semibold text-foreground md:text-2xl leading-snug">
+                <h3 className="mb-1 font-sans text-lg font-semibold text-foreground leading-snug">
                   {doctor.name}
                 </h3>
-                <p className="mb-2 font-mono text-sm text-foreground/60">{doctor.experience}</p>
-                {doctor.badge && (
-                  <span
-                    className="inline-block rounded-full px-3 py-1 text-xs font-medium"
-                    style={{
-                      background: "linear-gradient(135deg, #f472b620, #a78bfa20)",
-                      border: "1px solid #a78bfa40",
-                      color: "#c084fc",
-                    }}
-                  >
-                    {doctor.badge}
-                  </span>
-                )}
+                <p className="mb-3 font-mono text-xs text-foreground/50">{doctor.experience}</p>
+                <div className="flex flex-col gap-1">
+                  {doctor.specialties.map((s, j) => (
+                    <span key={j} className="font-mono text-xs text-foreground/60">· {s}</span>
+                  ))}
+                </div>
               </div>
             )
           })}
