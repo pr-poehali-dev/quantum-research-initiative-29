@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { DoctorsSection } from "@/components/sections/doctors-section"
 import { ChildrenSection } from "@/components/sections/children-section"
 import { ReviewsSection } from "@/components/sections/reviews-section"
+import { ImplantSection } from "@/components/sections/implant-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
 
@@ -150,7 +151,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 7) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 8) {
           setCurrentSection(newSection)
         }
 
@@ -229,7 +230,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Наши работы", "Терапия", "Детская", "Врачи", "О клинике", "Отзывы", "Запись"].map((item, index) => (
+          {["Главная", "Наши работы", "Терапия", "Имплантация", "Детская", "Врачи", "О клинике", "Отзывы", "Запись"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -247,7 +248,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(7)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(8)}>
           Записаться
         </MagneticButton>
       </nav>
@@ -309,6 +310,7 @@ export default function Index() {
 
         <WorkSection />
         <ServicesSection />
+        <ImplantSection scrollToSection={scrollToSection} />
         <ChildrenSection />
         <DoctorsSection />
         <AboutSection scrollToSection={scrollToSection} />
