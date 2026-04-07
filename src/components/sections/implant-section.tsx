@@ -2,13 +2,13 @@ import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
 
 const services = [
-  { title: "Одномоментная имплантация", description: "Установка импланта сразу после удаления зуба — без лишних визитов и долгого ожидания", direction: "top" },
-  { title: "Отсроченная имплантация", description: "Классический протокол с заживлением лунки — надёжно и предсказуемо", direction: "right" },
-  { title: "Имплантация All-on-4", description: "Полное восстановление зубного ряда на четырёх имплантах — несъёмный протез за один день", direction: "bottom" },
-  { title: "Имплантация All-on-6", description: "Восстановление зубного ряда на шести имплантах — повышенная надёжность и равномерное распределение нагрузки", direction: "left" },
-  { title: "Открытый и закрытый синус-лифтинг", description: "Наращивание кости в области верхней челюсти для успешной установки импланта", direction: "left" },
-  { title: "Вертикальное наращивание кости", description: "Восстановление объёма костной ткани при значительной атрофии", direction: "top" },
-  { title: "Наращивание кости с аутотрансплантатом", description: "Использование собственной кости пациента — наиболее биологически совместимый метод", direction: "right" },
+  { title: "Одномоментная имплантация", description: "Установка импланта сразу после удаления зуба — без лишних визитов и долгого ожидания", price: "от 32 000 ₽", direction: "top" },
+  { title: "Отсроченная имплантация", description: "Классический протокол с заживлением лунки — надёжно и предсказуемо", price: "от 36 500 ₽", direction: "right" },
+  { title: "Имплантация All-on-4", description: "Полное восстановление зубного ряда на четырёх имплантах — несъёмный протез за один день", price: "", direction: "bottom" },
+  { title: "Имплантация All-on-6", description: "Восстановление зубного ряда на шести имплантах — повышенная надёжность и равномерное распределение нагрузки", price: "", direction: "left" },
+  { title: "Открытый и закрытый синус-лифтинг", description: "Наращивание кости в области верхней челюсти для успешной установки импланта", price: "закрытый от 16 000 ₽", direction: "left" },
+  { title: "Вертикальное наращивание кости", description: "Восстановление объёма костной ткани при значительной атрофии", price: "от 15 000 ₽", direction: "top" },
+  { title: "Наращивание кости с аутотрансплантатом", description: "Использование собственной кости пациента — наиболее биологически совместимый метод", price: "от 6 000 ₽", direction: "right" },
 ]
 
 export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
@@ -73,6 +73,9 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                 </div>
                 <h3 className="mb-1 font-sans text-base font-semibold text-foreground md:text-lg">{service.title}</h3>
                 <p className="text-sm leading-relaxed text-foreground/70">{service.description}</p>
+                {service.price && (
+                  <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{service.price}</p>
+                )}
               </div>
             )
           })}
@@ -87,6 +90,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(8)}>
             Записаться на консультацию
           </MagneticButton>
+          <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
       </div>
     </section>
