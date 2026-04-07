@@ -11,7 +11,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-6 transition-all duration-700 md:mb-8 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
@@ -132,7 +132,6 @@ function ServiceCard({
     >
       <div className="mb-3 flex items-center gap-3">
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-        <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
       </div>
       <h3 className="mb-2 font-sans text-xl font-semibold text-foreground md:text-2xl">{service.title}</h3>
       <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
