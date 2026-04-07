@@ -309,9 +309,9 @@ export default function Index() {
         </section>
 
         <WorkSection />
-        <ServicesSection />
+        <ServicesSection scrollToSection={scrollToSection} />
         <ImplantSection scrollToSection={scrollToSection} />
-        <ChildrenSection />
+        <ChildrenSection scrollToSection={scrollToSection} />
         <DoctorsSection />
         <AboutSection scrollToSection={scrollToSection} />
         <ReviewsSection />

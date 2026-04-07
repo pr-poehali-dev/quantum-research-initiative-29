@@ -1,6 +1,7 @@
 import { useReveal } from "@/hooks/use-reveal"
+import { MagneticButton } from "@/components/magnetic-button"
 
-export function ServicesSection() {
+export function ServicesSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
 
   return (
@@ -79,6 +80,17 @@ export function ServicesSection() {
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
           ))}
         </div>
+
+        <div
+          className={`mt-8 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+          style={{ transitionDelay: "700ms" }}
+        >
+          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(8)}>
+            Записаться на консультацию
+          </MagneticButton>
+          <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
+        </div>
+
       </div>
     </section>
   )
