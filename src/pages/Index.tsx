@@ -268,7 +268,7 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
             alt="Зубные феи"
-            className="absolute right-6 top-20 w-56 animate-in fade-in duration-1000 md:right-12 md:w-80 lg:right-24 lg:w-96"
+            className="absolute left-6 top-16 w-48 animate-in fade-in duration-1000 md:left-12 md:w-64 lg:left-16 lg:w-72"
           />
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
