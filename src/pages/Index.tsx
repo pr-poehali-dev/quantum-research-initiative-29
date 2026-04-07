@@ -9,6 +9,8 @@ import { DoctorsSection } from "@/components/sections/doctors-section"
 import { ChildrenSection } from "@/components/sections/children-section"
 import { ReviewsSection } from "@/components/sections/reviews-section"
 import { ImplantSection } from "@/components/sections/implant-section"
+import { OrthodonticsSection } from "@/components/sections/orthodontics-section"
+import { OrthopedicsSection } from "@/components/sections/orthopedics-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
 
@@ -151,7 +153,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 8) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 10) {
           setCurrentSection(newSection)
         }
 
@@ -230,7 +232,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Наши работы", "Терапия", "Имплантация", "Детская", "Врачи", "О клинике", "Отзывы", "Запись"].map((item, index) => (
+          {["Главная", "Врачи", "Наши работы", "Терапия", "Имплантация", "Ортодонтия", "Ортопедия", "Детская", "О клинике", "Отзывы", "Запись"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -248,7 +250,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(8)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(10)}>
           Записаться
         </MagneticButton>
       </nav>
@@ -308,11 +310,13 @@ export default function Index() {
           </div>
         </section>
 
+        <DoctorsSection />
         <WorkSection />
         <ServicesSection scrollToSection={scrollToSection} />
         <ImplantSection scrollToSection={scrollToSection} />
+        <OrthodonticsSection scrollToSection={scrollToSection} />
+        <OrthopedicsSection scrollToSection={scrollToSection} />
         <ChildrenSection scrollToSection={scrollToSection} />
-        <DoctorsSection />
         <AboutSection scrollToSection={scrollToSection} />
         <ReviewsSection />
         <ContactSection />

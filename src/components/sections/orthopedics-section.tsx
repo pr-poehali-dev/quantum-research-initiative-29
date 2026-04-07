@@ -2,16 +2,15 @@ import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
 
 const services = [
-  { title: "Одномоментная имплантация", description: "Установка импланта сразу после удаления зуба — без лишних визитов и долгого ожидания", price: "от 32 000 ₽", direction: "top" },
-  { title: "Отсроченная имплантация", description: "Классический протокол с заживлением лунки — надёжно и предсказуемо", price: "от 36 500 ₽", direction: "right" },
-  { title: "Имплантация All-on-4", description: "Полное восстановление зубного ряда на четырёх имплантах — несъёмный протез за один день", price: "", direction: "bottom" },
-  { title: "Имплантация All-on-6", description: "Восстановление зубного ряда на шести имплантах — повышенная надёжность и равномерное распределение нагрузки", price: "", direction: "left" },
-  { title: "Открытый и закрытый синус-лифтинг", description: "Наращивание кости в области верхней челюсти для успешной установки импланта", price: "закрытый от 16 000 ₽", direction: "left" },
-  { title: "Вертикальное наращивание кости", description: "Восстановление объёма костной ткани при значительной атрофии", price: "от 15 000 ₽", direction: "top" },
-  { title: "Наращивание кости с аутотрансплантатом", description: "Использование собственной кости пациента — наиболее биологически совместимый метод", price: "от 6 000 ₽", direction: "right" },
+  { title: "Коронки", description: "Металлокерамические, циркониевые и керамические коронки — восстановление разрушенных зубов с эстетикой", price: "", direction: "top" },
+  { title: "Виниры и люминиры", description: "Тонкие керамические накладки для идеальной формы и цвета улыбки без значительного препарирования", price: "", direction: "right" },
+  { title: "Мостовидные протезы", description: "Несъёмные конструкции для восстановления одного или нескольких отсутствующих зубов", price: "", direction: "bottom" },
+  { title: "Съёмные протезы", description: "Частичные и полные съёмные протезы — нейлоновые, акриловые, бюгельные — при потере нескольких зубов", price: "", direction: "left" },
+  { title: "Протезирование на имплантах", description: "Одиночные коронки и мостовидные протезы с опорой на импланты — надёжно и как естественный зуб", price: "", direction: "top" },
+  { title: "Восстановление после травм", description: "Реставрация и протезирование при сколах, переломах и значительных разрушениях зубов", price: "", direction: "right" },
 ]
 
-export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
+export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
 
   return (
@@ -34,17 +33,9 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
               backgroundClip: "text",
             }}
           >
-            Имплантация
+            Ортопедия
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Мы не просто устанавливаем импланты — мы корректируем работу всей зубочелюстной системы</p>
-
-          <div className="mt-5 inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
-            <p className="text-sm font-semibold text-foreground md:text-base">
-              Демин Ефим Степанович
-              <span className="ml-2 font-normal text-foreground/50">· Врач стоматолог-хирург, имплантолог · стаж более 12 лет</span>
-            </p>
-          </div>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Восстанавливаем зубы так, чтобы вы забыли о проблеме</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3 md:gap-6">

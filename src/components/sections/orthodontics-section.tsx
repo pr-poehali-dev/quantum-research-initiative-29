@@ -2,16 +2,14 @@ import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
 
 const services = [
-  { title: "Одномоментная имплантация", description: "Установка импланта сразу после удаления зуба — без лишних визитов и долгого ожидания", price: "от 32 000 ₽", direction: "top" },
-  { title: "Отсроченная имплантация", description: "Классический протокол с заживлением лунки — надёжно и предсказуемо", price: "от 36 500 ₽", direction: "right" },
-  { title: "Имплантация All-on-4", description: "Полное восстановление зубного ряда на четырёх имплантах — несъёмный протез за один день", price: "", direction: "bottom" },
-  { title: "Имплантация All-on-6", description: "Восстановление зубного ряда на шести имплантах — повышенная надёжность и равномерное распределение нагрузки", price: "", direction: "left" },
-  { title: "Открытый и закрытый синус-лифтинг", description: "Наращивание кости в области верхней челюсти для успешной установки импланта", price: "закрытый от 16 000 ₽", direction: "left" },
-  { title: "Вертикальное наращивание кости", description: "Восстановление объёма костной ткани при значительной атрофии", price: "от 15 000 ₽", direction: "top" },
-  { title: "Наращивание кости с аутотрансплантатом", description: "Использование собственной кости пациента — наиболее биологически совместимый метод", price: "от 6 000 ₽", direction: "right" },
+  { title: "Брекет-системы", description: "Металлические и керамические брекеты для исправления прикуса и выравнивания зубного ряда", price: "", direction: "top" },
+  { title: "Элайнеры (капы)", description: "Съёмные прозрачные капы — незаметное исправление прикуса без металлических конструкций", price: "", direction: "right" },
+  { title: "Ретейнеры", description: "Фиксация результата лечения после снятия брекетов — удержание зубов в правильном положении", price: "", direction: "bottom" },
+  { title: "Ортодонтия для детей", description: "Исправление прикуса у детей и подростков на ранних стадиях — пластины и съёмные аппараты", price: "", direction: "left" },
+  { title: "Диагностика и план лечения", description: "Компьютерная диагностика прикуса, 3D-моделирование результата и составление индивидуального плана", price: "", direction: "top" },
 ]
 
-export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
+export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
 
   return (
@@ -34,15 +32,15 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
               backgroundClip: "text",
             }}
           >
-            Имплантация
+            Ортодонтия
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Мы не просто устанавливаем импланты — мы корректируем работу всей зубочелюстной системы</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Красивая улыбка начинается с правильного прикуса</p>
 
           <div className="mt-5 inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
             <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
             <p className="text-sm font-semibold text-foreground md:text-base">
-              Демин Ефим Степанович
-              <span className="ml-2 font-normal text-foreground/50">· Врач стоматолог-хирург, имплантолог · стаж более 12 лет</span>
+              Краснова Александра Васильевна
+              <span className="ml-2 font-normal text-foreground/50">· Врач-стоматолог терапевт · Детский стоматолог · Ортодонт · стаж 15 лет</span>
             </p>
           </div>
         </div>
@@ -85,7 +83,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           className={`mt-8 transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
-          style={{ transitionDelay: "700ms" }}
+          style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
             Записаться на консультацию
