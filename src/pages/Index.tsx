@@ -269,6 +269,7 @@ export default function Index() {
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/7158d746-a5d3-4513-a65b-52f0359c6345.jpg"
             alt="Зубные феи"
             className="absolute left-6 top-24 w-48 animate-in fade-in duration-1000 md:left-12 md:w-64 lg:w-80"
+            style={{ mixBlendMode: "screen" }}
           />
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
