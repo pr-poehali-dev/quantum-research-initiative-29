@@ -36,6 +36,22 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
             Ортопедия
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Восстанавливаем зубы так, чтобы вы забыли о проблеме</p>
+
+          <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
+            <div className="inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Крецу Ион Иванович
+                <span className="ml-2 font-normal text-foreground/50">· Врач стоматолог-ортопед · стаж более 12 лет</span>
+              </p>
+            </div>
+
+            <div className="max-w-md">
+              <p className="text-sm leading-relaxed text-foreground/70">
+                Современные методы протезирования на зубах и имплантах помогут сделать вашу улыбку неотразимой и вернуть вам полноценную функцию жевания.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3 md:gap-6">
