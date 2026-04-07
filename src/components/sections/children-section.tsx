@@ -59,18 +59,22 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
             {
               title: "Лечение молочных и постоянных зубов",
               description: "Бережное лечение кариеса и других заболеваний у детей с применением мягкой анестезии",
+              price: "от 3 000 ₽",
             },
             {
               title: "Профилактика и гигиена",
               description: "Профессиональная чистка, герметизация фиссур и обучение правильному уходу за зубами",
+              price: "от 150 ₽",
             },
             {
               title: "Ортодонтия для детей",
               description: "Исправление прикуса у детей и подростков на ранних стадиях — брекеты и съёмные аппараты",
+              price: "",
             },
             {
               title: "Психологический комфорт",
               description: "Приём проходит в спокойной атмосфере — ребёнок не боится стоматолога и приходит с удовольствием",
+              price: "",
             },
           ].map((item, i) => (
             <div
@@ -84,6 +88,7 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
               </div>
               <h3 className="mb-2 font-sans text-xl font-semibold text-foreground md:text-2xl">{item.title}</h3>
               <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{item.description}</p>
+              {item.price && <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{item.price}</p>}
             </div>
           ))}
         </div>
