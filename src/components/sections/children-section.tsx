@@ -26,7 +26,7 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           >
             Детская стоматология
           </h2>
-          <p className="mb-5 font-mono text-sm text-foreground/60 md:text-base">/ Бережно, без стресса, с заботой</p>
+          <p className="mb-5 text-base font-semibold text-foreground md:text-lg">Бережно, без стресса, с заботой</p>
 
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
             <div className="inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">

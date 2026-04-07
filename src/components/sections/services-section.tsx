@@ -20,7 +20,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
           >
             Терапевтическая стоматология
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Лечим правильно, честно, с результатом</p>
+          <p className="text-base font-semibold text-foreground md:text-lg">Лечим правильно, честно, с результатом</p>
           <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
             <div className="inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
               <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведут</span>

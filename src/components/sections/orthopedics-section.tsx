@@ -35,7 +35,7 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
           >
             Ортопедия
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Восстанавливаем зубы так, чтобы вы забыли о проблеме</p>
+          <p className="text-base font-semibold text-foreground md:text-lg">Восстанавливаем зубы так, чтобы вы забыли о проблеме</p>
 
           <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
             <div className="inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
