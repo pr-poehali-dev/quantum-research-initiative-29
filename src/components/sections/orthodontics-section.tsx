@@ -44,15 +44,11 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
               </p>
             </div>
 
-            <div className="flex flex-col gap-1.5 max-w-md">
-              <p className="text-sm leading-relaxed text-foreground/70">
-                <span className="font-semibold text-foreground">Детям</span> — мягкое развитие челюстей с вниманием к осанке.&nbsp;
-                <span className="font-semibold text-foreground">Взрослым</span> — эстетика и здоровье.
-              </p>
-              <p className="text-sm leading-relaxed text-foreground/70">
-                Функциональный подход. Точное планирование. Все виды аппаратуры: от классических пластинок и трейнеров до брекетов и элайнеров.
-              </p>
-            </div>
+            <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
+              <span className="font-semibold text-foreground">Детям</span> — мягкое развитие челюстей с вниманием к осанке.&nbsp;
+              <span className="font-semibold text-foreground">Взрослым</span> — эстетика и здоровье.{" "}
+              Функциональный подход. Точное планирование. Все виды аппаратуры: от классических пластинок и трейнеров до брекетов и элайнеров.
+            </p>
           </div>
         </div>
 
