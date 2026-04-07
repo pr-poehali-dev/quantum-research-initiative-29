@@ -265,7 +265,11 @@ export default function Index() {
       >
         {/* Hero Section */}
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
-
+          <img
+            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
+            alt="Зубные феи"
+            className="absolute right-6 top-20 w-56 animate-in fade-in duration-1000 md:right-12 md:w-80 lg:right-24 lg:w-96"
+          />
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="font-mono text-xs text-foreground/90">Стоматологическая клиника · Рязань</p>
