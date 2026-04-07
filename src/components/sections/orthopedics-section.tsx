@@ -46,11 +46,9 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
               </p>
             </div>
 
-            <div className="max-w-md">
-              <p className="text-sm leading-relaxed text-foreground/70">
-                Современные методы протезирования на зубах и имплантах помогут сделать вашу улыбку неотразимой и вернуть вам полноценную функцию жевания.
-              </p>
-            </div>
+            <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
+              Современные методы протезирования на зубах и имплантах помогут сделать вашу улыбку неотразимой и вернуть вам полноценную функцию жевания.
+            </p>
           </div>
         </div>
 
