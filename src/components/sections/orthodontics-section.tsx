@@ -35,22 +35,24 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
             Ортодонтия
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Исправляем прикус и создаём гармоничную улыбку — с заботой о каждом пациенте</p>
-          <div className="mt-3 flex flex-col gap-1.5 max-w-2xl">
-            <p className="text-sm leading-relaxed text-foreground/70">
-              <span className="font-semibold text-foreground">Детям</span> — мягкое развитие челюстей с вниманием к осанке.&nbsp;
-              <span className="font-semibold text-foreground">Взрослым</span> — эстетика и здоровье.
-            </p>
-            <p className="text-sm leading-relaxed text-foreground/70">
-              Функциональный подход. Точное планирование. Все виды аппаратуры: от классических пластинок и трейнеров до брекетов и элайнеров.
-            </p>
-          </div>
+          <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
+            <div className="inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Краснова Александра Васильевна
+                <span className="ml-2 font-normal text-foreground/50">· Врач-стоматолог терапевт · Детский стоматолог · Ортодонт · стаж 15 лет</span>
+              </p>
+            </div>
 
-          <div className="mt-5 inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
-            <p className="text-sm font-semibold text-foreground md:text-base">
-              Краснова Александра Васильевна
-              <span className="ml-2 font-normal text-foreground/50">· Врач-стоматолог терапевт · Детский стоматолог · Ортодонт · стаж 15 лет</span>
-            </p>
+            <div className="flex flex-col gap-1.5 max-w-md">
+              <p className="text-sm leading-relaxed text-foreground/70">
+                <span className="font-semibold text-foreground">Детям</span> — мягкое развитие челюстей с вниманием к осанке.&nbsp;
+                <span className="font-semibold text-foreground">Взрослым</span> — эстетика и здоровье.
+              </p>
+              <p className="text-sm leading-relaxed text-foreground/70">
+                Функциональный подход. Точное планирование. Все виды аппаратуры: от классических пластинок и трейнеров до брекетов и элайнеров.
+              </p>
+            </div>
           </div>
         </div>
 
