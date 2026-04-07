@@ -51,7 +51,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
         </div>
 
         <div className="hidden md:flex gap-x-8 lg:gap-x-10 items-start">
-          <div className="flex flex-col gap-5 flex-1">
+          <div className="flex flex-col gap-3 flex-1">
             {[
               { title: "Лечение кариеса", description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии", price: "от 3 500 ₽", direction: "top" },
               { title: "Лечение пульпита и периодонтита", description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли", price: "от 9 500 ₽", direction: "left" },
@@ -60,7 +60,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
               <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
             ))}
           </div>
-          <div className="flex flex-col gap-5 flex-1 mt-8">
+          <div className="flex flex-col gap-3 flex-1 mt-4">
             {[
               { title: "Эстетическая реставрация и композитные виниры", description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров", price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽", direction: "right" },
               { title: "Перелечивание каналов под микроскопом", description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно", price: "от 12 000 ₽", direction: "bottom" },
@@ -82,7 +82,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
         </div>
 
         <div
-          className={`mt-8 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+          className={`mt-4 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
           style={{ transitionDelay: "700ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
@@ -130,11 +130,11 @@ function ServiceCard({
         transitionDelay: `${index * 150}ms`,
       }}
     >
-      <div className="mb-3 flex items-center gap-3">
+      <div className="mb-1.5 flex items-center gap-3">
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
       </div>
-      <h3 className="mb-2 font-sans text-xl font-semibold text-foreground md:text-2xl">{service.title}</h3>
-      <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
+      <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:text-xl">{service.title}</h3>
+      <p className="max-w-sm text-sm leading-relaxed text-foreground/80">{service.description}</p>
       <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{service.price}</p>
     </div>
   )
