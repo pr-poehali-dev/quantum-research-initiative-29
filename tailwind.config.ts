@@ -23,6 +23,11 @@ export default {
 		},
 		extend: {
 			colors: {
+				'fairy-pink': '#f472b6',
+				'fairy-violet': '#a78bfa',
+				'fairy-purple': '#c084fc',
+				'fairy-fuchsia': '#e879f9',
+				'fairy-indigo': '#818cf8',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
