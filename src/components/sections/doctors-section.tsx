@@ -45,11 +45,11 @@ export function DoctorsSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex h-screen w-screen shrink-0 snap-start items-start px-6 pt-16 md:px-12 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-10 transition-all duration-700 md:mb-14 ${
+          className={`mb-4 transition-all duration-700 md:mb-6 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
@@ -88,7 +88,7 @@ export function DoctorsSection() {
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
                 {"photo" in doctor && doctor.photo ? (
-                  <div className="mb-4 h-56 w-56 overflow-hidden rounded-2xl border border-foreground/20">
+                  <div className="mb-3 h-40 w-40 overflow-hidden rounded-2xl border border-foreground/20">
                     <img src={doctor.photo} alt={doctor.name} className="h-full w-full object-cover object-top" />
                   </div>
                 ) : (
