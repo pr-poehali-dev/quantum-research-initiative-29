@@ -285,7 +285,7 @@ export default function Index() {
 
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">Стоматологическая клиника · Рязань</p>
+              <p className="font-mono text-xs text-foreground/90">Стоматологическая клиника · Рязань · Ул. Маяковского, 57</p>
             </div>
 
             <p className="mb-8 max-w-2xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
