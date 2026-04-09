@@ -109,7 +109,7 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2ff70494-a53a-4046-ae02-e907581e53eb.jpg"
             alt="Элайнеры"
-            className="h-[480px] w-[340px] rounded-3xl object-cover shadow-2xl"
+            className="h-[360px] w-[260px] rounded-3xl object-cover shadow-2xl mt-16"
           />
         </div>
       </div>
