@@ -68,7 +68,7 @@ export function DoctorsSection() {
           <p className="text-base font-semibold text-foreground md:text-lg">Опытные специалисты вашей улыбки</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-10">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5 md:gap-8">
           {doctors.map((doctor, i) => {
             const getRevealClass = () => {
               if (!isVisible) {
