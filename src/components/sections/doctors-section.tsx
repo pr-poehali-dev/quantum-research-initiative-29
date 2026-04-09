@@ -106,10 +106,17 @@ export function DoctorsSection() {
                 <h3 className="mb-1 font-sans text-lg font-semibold text-foreground leading-snug">
                   {doctor.name}
                 </h3>
-                <p className="mb-3 font-mono text-xs font-bold text-foreground/80">{doctor.experience}</p>
+                <p className="mb-3 font-sans text-xs font-bold text-foreground/80">{doctor.experience}</p>
                 <div className="flex flex-col gap-1">
                   {doctor.specialties.map((s, j) => (
-                    <span key={j} className="font-mono text-xs text-foreground/60">· {s}</span>
+                    <span key={j} className="font-sans text-xs text-foreground/60">
+                      · {s.startsWith("Врач стоматолог") ? (
+                        <>
+                          <span className="font-semibold text-foreground/90">Врач стоматолог</span>
+                          {s.slice("Врач стоматолог".length)}
+                        </>
+                      ) : s}
+                    </span>
                   ))}
                 </div>
                 {"founder" in doctor && doctor.founder && (
