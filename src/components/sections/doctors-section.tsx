@@ -7,6 +7,7 @@ const doctors = [
     specialties: ["Врач стоматолог-терапевт", "Эндодонтист"],
     badge: "Отличник стоматологии",
     direction: "top",
+    photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/817ff915-03e7-4986-b5cf-27869a335a13.jpg",
   },
   {
     name: "Краснова Александра Васильевна",
