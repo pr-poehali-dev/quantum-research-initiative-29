@@ -61,7 +61,7 @@ export function DoctorsSection() {
           >
             Наша команда
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Опытные специалисты вашей улыбки</p>
+          <p className="text-base font-semibold text-foreground md:text-lg">Опытные специалисты вашей улыбки</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-10">
