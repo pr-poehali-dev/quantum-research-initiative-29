@@ -109,13 +109,8 @@ export function DoctorsSection() {
                 <p className="mb-3 font-sans text-xs font-bold text-foreground/80">{doctor.experience}</p>
                 <div className="flex flex-col gap-1">
                   {doctor.specialties.map((s, j) => (
-                    <span key={j} className="font-sans text-xs text-foreground/60">
-                      · {s.startsWith("Врач стоматолог") ? (
-                        <>
-                          <span className="font-semibold text-foreground/90">Врач стоматолог</span>
-                          {s.slice("Врач стоматолог".length)}
-                        </>
-                      ) : s}
+                    <span key={j} className="font-sans text-xs font-semibold text-foreground/90">
+                      · {s}
                     </span>
                   ))}
                 </div>
