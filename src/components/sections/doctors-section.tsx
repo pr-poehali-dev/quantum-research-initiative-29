@@ -106,7 +106,7 @@ export function DoctorsSection() {
                 <h3 className="mb-1 font-sans text-lg font-semibold text-foreground leading-snug">
                   {doctor.name}
                 </h3>
-                <p className="mb-3 font-mono text-xs text-foreground/50">{doctor.experience}</p>
+                <p className="mb-3 font-mono text-xs font-bold text-foreground/80">{doctor.experience}</p>
                 <div className="flex flex-col gap-1">
                   {doctor.specialties.map((s, j) => (
                     <span key={j} className="font-mono text-xs text-foreground/60">· {s}</span>
@@ -128,9 +128,9 @@ export function DoctorsSection() {
                   <span
                     className="mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium"
                     style={{
-                      background: "linear-gradient(135deg, #f472b620, #a78bfa20)",
-                      border: "1px solid #a78bfa40",
-                      color: "#c084fc",
+                      background: "linear-gradient(135deg, #34d39920, #06b6d420)",
+                      border: "1px solid #34d39940",
+                      color: "#34d399",
                     }}
                   >
                     {doctor.badge}
