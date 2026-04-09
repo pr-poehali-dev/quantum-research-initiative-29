@@ -233,7 +233,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Врачи", "Наши работы", "Терапия", "Имплантация", "Ортодонтия", "Ортопедия", "Детская", "О клинике", "Отзывы", "Запись"].map((item, index) => (
+          {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -329,10 +329,10 @@ export default function Index() {
         <DoctorsSection />
         <WorkSection />
         <ServicesSection scrollToSection={scrollToSection} />
-        <ImplantSection scrollToSection={scrollToSection} />
-        <OrthodonticsSection scrollToSection={scrollToSection} />
-        <OrthopedicsSection scrollToSection={scrollToSection} />
         <ChildrenSection scrollToSection={scrollToSection} />
+        <OrthodonticsSection scrollToSection={scrollToSection} />
+        <ImplantSection scrollToSection={scrollToSection} />
+        <OrthopedicsSection scrollToSection={scrollToSection} />
         <AboutSection scrollToSection={scrollToSection} />
         <ReviewsSection />
         <ContactSection />
