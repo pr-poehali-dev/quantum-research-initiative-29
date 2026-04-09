@@ -271,13 +271,16 @@ export default function Index() {
             alt="Зубные феи"
             className="absolute -left-8 top-24 w-[40vw] max-w-lg animate-in fade-in duration-1000 md:-left-4 lg:left-0"
           />
-          <div className="absolute right-6 top-16 h-[55vh] w-[28vw] max-w-sm overflow-hidden rounded-3xl shadow-2xl animate-in fade-in duration-1000 md:right-12 lg:right-16">
+          <div className="absolute right-6 top-16 h-[55vh] w-[28vw] max-w-sm animate-in fade-in duration-1000 md:right-12 lg:right-16">
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
               alt="Врачи клиники"
               className="h-full w-full object-cover object-center"
+              style={{
+                maskImage: 'radial-gradient(ellipse 80% 85% at 50% 40%, black 40%, transparent 80%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 80% 85% at 50% 40%, black 40%, transparent 80%)',
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
 
           <div className="max-w-3xl">
