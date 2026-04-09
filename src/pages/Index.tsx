@@ -293,7 +293,7 @@ export default function Index() {
               <span className="text-pretty">
                 Современная стоматология без боли и страха. Бережное лечение, протезирование, исправление прикуса и имплантация для всей семьи.
                 <br className="hidden md:block" />
-                <span className="mt-2 block text-foreground/70 md:text-lg">
+                <span className="mt-3 block font-sans text-xl font-semibold text-foreground md:text-2xl">
                   Лечить правильно. Лечить честно. Результат должен превосходить ожидания.
                 </span>
               </span>
