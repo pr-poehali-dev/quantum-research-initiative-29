@@ -32,6 +32,7 @@ const doctors = [
     experience: "Стаж более 12 лет",
     specialties: ["Врач стоматолог-хирург", "Имплантолог"],
     direction: "left",
+    photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/ec5e123f-727c-4698-9b28-870e233a7a8d.jpg",
   },
 ]
 
