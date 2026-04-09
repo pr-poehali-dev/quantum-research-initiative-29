@@ -269,13 +269,16 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
             alt="Зубные феи"
-            className="absolute -left-8 top-24 w-[60vw] max-w-2xl animate-in fade-in duration-1000 md:-left-4 lg:left-0"
+            className="absolute -left-8 top-24 w-[40vw] max-w-lg animate-in fade-in duration-1000 md:-left-4 lg:left-0"
           />
-          <img
-            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
-            alt="Врачи клиники"
-            className="absolute right-6 top-16 h-[50vh] w-auto animate-in fade-in duration-1000 rounded-2xl object-cover opacity-60 md:right-12 lg:right-16"
-          />
+          <div className="absolute right-6 top-16 h-[55vh] w-[28vw] max-w-sm overflow-hidden rounded-3xl shadow-2xl animate-in fade-in duration-1000 md:right-12 lg:right-16">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
+              alt="Врачи клиники"
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
 
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
