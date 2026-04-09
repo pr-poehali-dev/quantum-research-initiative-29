@@ -271,7 +271,7 @@ export default function Index() {
             alt="Зубные феи"
             className="absolute -left-8 top-24 w-[40vw] max-w-lg animate-in fade-in duration-1000 md:-left-4 lg:left-0"
           />
-          <div className="absolute right-6 top-16 h-[55vh] w-[28vw] max-w-sm animate-in fade-in duration-1000 md:right-12 lg:right-16">
+          <div className="absolute right-6 top-36 h-[55vh] w-[28vw] max-w-sm animate-in fade-in duration-1000 md:right-12 lg:right-16">
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
               alt="Врачи клиники"
