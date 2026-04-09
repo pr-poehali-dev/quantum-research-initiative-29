@@ -50,7 +50,7 @@ export function DoctorsSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-4 transition-all duration-700 md:mb-6 ${
+          className={`mb-4 transition-all duration-700 md:mb-6 text-center ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
