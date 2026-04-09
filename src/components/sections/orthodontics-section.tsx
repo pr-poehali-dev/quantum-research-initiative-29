@@ -17,7 +17,8 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-10 items-start">
+        <div className="flex-1 min-w-0">
         <div
           className={`mb-8 transition-all duration-700 md:mb-12 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -96,6 +97,20 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
+        </div>
+        </div>
+
+        <div
+          className={`hidden lg:block shrink-0 transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <img
+            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2ff70494-a53a-4046-ae02-e907581e53eb.jpg"
+            alt="Элайнеры"
+            className="h-[480px] w-[340px] rounded-3xl object-cover shadow-2xl"
+          />
         </div>
       </div>
     </section>
