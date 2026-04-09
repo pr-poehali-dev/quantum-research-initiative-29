@@ -19,6 +19,7 @@ const doctors = [
     experience: "Стаж более 3 лет",
     specialties: ["Врач стоматолог-терапевт", "Эндодонтист", "Микроскопист"],
     direction: "right",
+    photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/53bb3275-71ba-4e55-bbb1-f55835c73caf.jpg",
   },
   {
     name: "Крецу Ион Иванович",
@@ -82,9 +83,15 @@ export function DoctorsSection() {
                 className={`group transition-all duration-700 ${getRevealClass()}`}
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-xl font-bold text-foreground/30">
-                  {doctor.name.charAt(0)}
-                </div>
+                {"photo" in doctor && doctor.photo ? (
+                  <div className="mb-4 h-14 w-14 overflow-hidden rounded-full border border-foreground/20">
+                    <img src={doctor.photo} alt={doctor.name} className="h-full w-full object-cover object-top" />
+                  </div>
+                ) : (
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-xl font-bold text-foreground/30">
+                    {doctor.name.charAt(0)}
+                  </div>
+                )}
 
                 <div className="mb-3 flex items-center gap-3">
                   <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
