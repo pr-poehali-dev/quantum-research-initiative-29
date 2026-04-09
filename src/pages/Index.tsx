@@ -228,7 +228,7 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
             alt="Зубные феи"
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
         </button>
 
