@@ -26,6 +26,7 @@ const doctors = [
     experience: "Стаж более 12 лет",
     specialties: ["Врач стоматолог-ортопед"],
     direction: "bottom",
+    photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/66b042c1-3d6a-4883-9c47-79a7fa55f1a5.jpg",
   },
   {
     name: "Демин Ефим Степанович",
