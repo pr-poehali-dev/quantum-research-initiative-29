@@ -6,6 +6,7 @@ const doctors = [
     experience: "Стаж более 35 лет",
     specialties: ["Врач стоматолог-терапевт", "Эндодонтист"],
     badge: "Отличник стоматологии",
+    founder: true,
     direction: "top",
     photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/817ff915-03e7-4986-b5cf-27869a335a13.jpg",
   },
@@ -89,7 +90,7 @@ export function DoctorsSection() {
               >
                 {"photo" in doctor && doctor.photo ? (
                   <div className="mb-3 h-40 w-40 overflow-hidden rounded-2xl border border-foreground/20">
-                    <img src={doctor.photo} alt={doctor.name} className="h-full w-full object-cover object-top" />
+                    <img src={doctor.photo} alt={doctor.name} className={`h-full w-full object-cover ${doctor.name.includes("Демин") ? "object-[center_15%]" : "object-top"}`} />
                   </div>
                 ) : (
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-xl font-bold text-foreground/30">
@@ -111,9 +112,21 @@ export function DoctorsSection() {
                     <span key={j} className="font-mono text-xs text-foreground/60">· {s}</span>
                   ))}
                 </div>
+                {"founder" in doctor && doctor.founder && (
+                  <span
+                    className="mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium"
+                    style={{
+                      background: "linear-gradient(135deg, #fbbf2420, #f4722020)",
+                      border: "1px solid #fbbf2440",
+                      color: "#fbbf24",
+                    }}
+                  >
+                    Основатель клиники
+                  </span>
+                )}
                 {"badge" in doctor && doctor.badge && (
                   <span
-                    className="mt-3 inline-block rounded-full px-3 py-1 text-xs font-medium"
+                    className="mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium"
                     style={{
                       background: "linear-gradient(135deg, #f472b620, #a78bfa20)",
                       border: "1px solid #a78bfa40",
