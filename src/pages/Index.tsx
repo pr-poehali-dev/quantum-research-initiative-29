@@ -274,7 +274,7 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
             alt="Врачи клиники"
-            className="absolute right-6 top-16 h-[70vh] w-auto animate-in fade-in duration-1000 rounded-2xl object-cover md:right-12 lg:right-16"
+            className="absolute right-6 top-16 h-[50vh] w-auto animate-in fade-in duration-1000 rounded-2xl object-cover opacity-60 md:right-12 lg:right-16"
           />
 
           <div className="max-w-3xl">
