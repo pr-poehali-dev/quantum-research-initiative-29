@@ -14,6 +14,7 @@ const doctors = [
     experience: "Стаж более 15 лет",
     specialties: ["Врач стоматолог-терапевт", "Детский стоматолог", "Ортодонт", "Эндодонтист", "Микроскопист"],
     direction: "right",
+    photo: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/84d9405d-af44-4c2e-8f69-465bd6cc7685.jpg",
   },
   {
     name: "Судникова Дарья Витальевна",
