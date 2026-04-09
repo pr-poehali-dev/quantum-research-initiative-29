@@ -103,7 +103,7 @@ export function DoctorsSection() {
                   <span className="font-mono text-xs text-foreground/60">0{i + 1}</span>
                 </div>
 
-                <h3 className="mb-1 font-sans text-lg font-semibold text-foreground leading-snug">
+                <h3 className="mb-1 mt-4 font-sans text-lg font-semibold text-foreground leading-snug">
                   {doctor.name}
                 </h3>
                 <p className="mb-3 font-sans text-xs font-bold text-foreground/80">{doctor.experience}</p>
