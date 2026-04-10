@@ -319,14 +319,25 @@ export default function Index() {
               <button
                 type="button"
                 onClick={() => setIsHeroVideoOpen(true)}
-                className="group relative flex items-center gap-3 overflow-hidden rounded-full px-6 py-3 transition-all hover:scale-105"
+                className="group relative flex items-center gap-3 rounded-full px-6 py-3 transition-all hover:scale-105"
                 style={{
                   background: "linear-gradient(135deg, #f472b6, #a78bfa)",
                   boxShadow: "0 0 32px rgba(244, 114, 182, 0.5), 0 0 64px rgba(167, 139, 250, 0.3)",
                 }}
               >
+                <span
+                  className="pointer-events-none absolute -right-3 -top-3 z-20 flex h-7 items-center gap-1 rounded-full px-2.5 font-sans text-[10px] font-black uppercase tracking-wider text-white shadow-lg"
+                  style={{
+                    background: "linear-gradient(135deg, #ef4444, #f97316)",
+                    boxShadow: "0 0 16px rgba(239, 68, 68, 0.8)",
+                    animation: "wiggle 1.2s ease-in-out infinite",
+                  }}
+                >
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
+                  Смотри сейчас
+                </span>
                 <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity group-hover:opacity-100" style={{ background: "linear-gradient(135deg, #fbbf24, #f472b6)" }} />
-                <span className="pointer-events-none absolute -inset-1 rounded-full opacity-75 blur-md transition-opacity group-hover:opacity-100" style={{ background: "linear-gradient(135deg, #f472b6, #a78bfa)" }} />
+                <span className="pointer-events-none absolute -inset-1 -z-10 rounded-full opacity-75 blur-md transition-opacity group-hover:opacity-100" style={{ background: "linear-gradient(135deg, #f472b6, #a78bfa)" }} />
                 <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/25 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:bg-white/35">
                   <span className="absolute inset-0 animate-ping rounded-full bg-white/40" />
                   <Icon name="Play" size={18} className="relative ml-0.5 text-white" />
@@ -381,6 +392,10 @@ export default function Index() {
       <style>{`
         div::-webkit-scrollbar {
           display: none;
+        }
+        @keyframes wiggle {
+          0%, 100% { transform: rotate(-6deg) scale(1); }
+          50% { transform: rotate(6deg) scale(1.08); }
         }
       `}</style>
     </main>
