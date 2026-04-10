@@ -31,14 +31,17 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Увыхмина Наталья Алексеевна
                   <span className="ml-2 font-normal text-foreground/50">· стаж 35 лет ·</span>
-                  <button
-                    type="button"
-                    onClick={() => setIsAwardOpen(true)}
-                    className="ml-1 inline-flex cursor-pointer items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-2.5 py-0.5 font-mono text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 hover:border-amber-400/70 hover:bg-amber-400/20"
-                    style={{ background: "linear-gradient(135deg, #fde68a, #fbbf24, #d97706)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.6))" }}
-                  >
-                    ★ отличник стоматологии
-                  </button>
+                  <span className="relative ml-1 inline-flex">
+                    <span className="absolute inset-0 animate-ping rounded-full bg-amber-400/30" style={{ animationDuration: "2s" }} />
+                    <button
+                      type="button"
+                      onClick={() => setIsAwardOpen(true)}
+                      className="award-pulse relative inline-flex cursor-pointer items-center rounded-full border border-amber-400/60 bg-amber-400/10 px-2.5 py-0.5 font-mono text-xs font-bold uppercase tracking-wider transition-all hover:scale-110 hover:border-amber-400 hover:bg-amber-400/25"
+                      style={{ background: "linear-gradient(135deg, #fde68a, #fbbf24, #d97706)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.6))" }}
+                    >
+                      ★ отличник стоматологии
+                    </button>
+                  </span>
                 </p>
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Краснова Александра Васильевна
