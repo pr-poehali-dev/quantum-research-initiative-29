@@ -38,12 +38,25 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           </h2>
           <p className="text-base font-semibold text-foreground md:text-lg">Мы не просто устанавливаем импланты — мы корректируем работу всей зубочелюстной системы</p>
 
-          <div className="mt-5 inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
-            <p className="text-sm font-semibold text-foreground md:text-base">
-              Демин Ефим Степанович
-              <span className="ml-2 font-normal text-foreground/50">· Врач стоматолог-хирург, имплантолог · стаж более 12 лет</span>
-            </p>
+          <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-center">
+            <div className="inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
+              <p className="text-sm font-semibold text-foreground md:text-base">
+                Демин Ефим Степанович
+                <span className="ml-2 font-normal text-foreground/50">· Врач стоматолог-хирург, имплантолог · стаж более 12 лет</span>
+              </p>
+            </div>
+
+            <div className="relative w-full max-w-xs overflow-hidden rounded-xl border border-foreground/10 bg-foreground/5" style={{ aspectRatio: "16/9" }}>
+              <iframe
+                src="https://vk.com/video_ext.php?oid=153049679&id=456239772&hd=2"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameBorder="0"
+                allowFullScreen
+                title="Имплантация зубов"
+              />
+            </div>
           </div>
         </div>
 
