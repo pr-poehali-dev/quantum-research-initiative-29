@@ -94,7 +94,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                 <h3 className="mb-1 font-sans text-base font-semibold text-foreground md:text-lg">{service.title}</h3>
                 <p className="text-sm leading-relaxed text-foreground/70">{service.description}</p>
                 {service.price && (
-                  <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{service.price}</p>
+                  <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#fbbf24" }}>{service.price}</p>
                 )}
               </div>
             )

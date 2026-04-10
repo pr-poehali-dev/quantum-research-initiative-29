@@ -88,7 +88,7 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
               </div>
               <h3 className="mb-2 font-sans text-xl font-semibold text-foreground md:text-2xl">{item.title}</h3>
               <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{item.description}</p>
-              {item.price && <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#c084fc" }}>{item.price}</p>}
+              {item.price && <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#fbbf24" }}>{item.price}</p>}
             </div>
           ))}
         </div>
