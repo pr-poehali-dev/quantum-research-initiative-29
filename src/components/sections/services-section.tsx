@@ -28,7 +28,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Увыхмина Наталья Алексеевна
                   <span className="ml-2 font-normal text-foreground/50">· стаж 35 лет ·</span>
-                  <span className="ml-1 font-mono text-xs" style={{ color: "#c084fc" }}>отличник стоматологии</span>
+                  <span className="ml-1 font-mono text-xs font-bold uppercase tracking-wider" style={{ background: "linear-gradient(135deg, #fde68a, #fbbf24, #d97706)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.6))" }}>★ отличник стоматологии</span>
                 </p>
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Краснова Александра Васильевна
