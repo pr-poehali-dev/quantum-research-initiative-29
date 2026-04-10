@@ -106,21 +106,27 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <img
-            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2ff70494-a53a-4046-ae02-e907581e53eb.jpg"
-            alt="Элайнеры"
-            className="flex-1 w-[340px] rounded-3xl object-cover shadow-2xl"
-          />
-          <img
-            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/0e0355a9-25a0-4efc-a687-38c56805eca4.jpg"
-            alt="Брекеты"
-            className="flex-1 w-[340px] rounded-3xl object-cover shadow-2xl"
-          />
-          <img
-            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/a720afe8-999a-4172-80a5-0ca8d1ade2b8.jpg"
-            alt="Детские пластинки"
-            className="flex-1 w-[340px] rounded-3xl object-cover shadow-2xl"
-          />
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2ff70494-a53a-4046-ae02-e907581e53eb.jpg"
+              alt="Элайнеры"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/0e0355a9-25a0-4efc-a687-38c56805eca4.jpg"
+              alt="Брекеты"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/a720afe8-999a-4172-80a5-0ca8d1ade2b8.jpg"
+              alt="Детские пластинки"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
         </div>
       </div>
     </section>
