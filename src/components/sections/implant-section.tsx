@@ -120,7 +120,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "16/9" }}>
             {isVideoOpen && (
               <iframe
-                src="https://vk.com/video_ext.php?oid=153049679&id=456239772&hd=2&autoplay=1"
+                src="https://vkvideo.ru/video_ext.php?oid=-237544957&id=456239017&hash=46cc161bfe63ebb9&hd=3&autoplay=1"
                 className="absolute inset-0 h-full w-full"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
                 frameBorder="0"
