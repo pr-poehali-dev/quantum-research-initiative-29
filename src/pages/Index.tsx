@@ -319,12 +319,21 @@ export default function Index() {
               <button
                 type="button"
                 onClick={() => setIsHeroVideoOpen(true)}
-                className="group flex items-center gap-3 rounded-full border border-foreground/20 bg-foreground/10 px-5 py-3 backdrop-blur-md transition-all hover:border-foreground/40 hover:bg-foreground/20"
+                className="group relative flex items-center gap-3 overflow-hidden rounded-full px-6 py-3 transition-all hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, #f472b6, #a78bfa)",
+                  boxShadow: "0 0 32px rgba(244, 114, 182, 0.5), 0 0 64px rgba(167, 139, 250, 0.3)",
+                }}
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/15 transition-all group-hover:scale-110 group-hover:bg-foreground/25">
-                  <Icon name="Play" size={16} className="ml-0.5 text-foreground" />
-                </div>
-                <span className="font-sans text-sm font-medium text-foreground">Смотреть видео</span>
+                <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity group-hover:opacity-100" style={{ background: "linear-gradient(135deg, #fbbf24, #f472b6)" }} />
+                <span className="pointer-events-none absolute -inset-1 rounded-full opacity-75 blur-md transition-opacity group-hover:opacity-100" style={{ background: "linear-gradient(135deg, #f472b6, #a78bfa)" }} />
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/25 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:bg-white/35">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-white/40" />
+                  <Icon name="Play" size={18} className="relative ml-0.5 text-white" />
+                </span>
+                <span className="relative font-sans text-sm font-bold uppercase tracking-wider text-white drop-shadow-md">
+                  Смотреть видео
+                </span>
               </button>
             </div>
           </div>
