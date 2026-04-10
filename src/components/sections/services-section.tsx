@@ -1,8 +1,11 @@
+import { useState } from "react"
 import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 
 export function ServicesSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
+  const [isAwardOpen, setIsAwardOpen] = useState(false)
 
   return (
     <section
@@ -28,7 +31,14 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Увыхмина Наталья Алексеевна
                   <span className="ml-2 font-normal text-foreground/50">· стаж 35 лет ·</span>
-                  <span className="ml-1 font-mono text-xs font-bold uppercase tracking-wider" style={{ background: "linear-gradient(135deg, #fde68a, #fbbf24, #d97706)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.6))" }}>★ отличник стоматологии</span>
+                  <button
+                    type="button"
+                    onClick={() => setIsAwardOpen(true)}
+                    className="ml-1 inline-flex cursor-pointer items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-2.5 py-0.5 font-mono text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 hover:border-amber-400/70 hover:bg-amber-400/20"
+                    style={{ background: "linear-gradient(135deg, #fde68a, #fbbf24, #d97706)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.6))" }}
+                  >
+                    ★ отличник стоматологии
+                  </button>
                 </p>
                 <p className="text-sm font-semibold text-foreground md:text-base">
                   Краснова Александра Васильевна
@@ -92,6 +102,27 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
         </div>
 
       </div>
+
+      <Dialog open={isAwardOpen} onOpenChange={setIsAwardOpen}>
+        <DialogContent className="max-w-2xl border-amber-400/30 bg-background p-0">
+          <DialogTitle className="sr-only">Отличник стоматологии</DialogTitle>
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/9cdab6ce-8869-4106-9315-662d02fb5f96.jpg"
+              alt="Грамота — Отличник стоматологии"
+              className="w-full"
+            />
+            <div className="px-6 py-4">
+              <p className="font-sans text-base font-semibold text-foreground md:text-lg">
+                Увыхмина Наталья Алексеевна
+              </p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-amber-400">
+                ★ Отличник стоматологии · стаж 35 лет
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
