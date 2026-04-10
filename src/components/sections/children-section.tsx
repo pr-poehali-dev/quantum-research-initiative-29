@@ -9,7 +9,8 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-10 items-stretch h-[calc(100vh-6rem)] md:h-[calc(100vh-4rem)]">
+        <div className="flex-1 min-w-0">
         <div
           className={`mb-10 transition-all duration-700 md:mb-14 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -102,7 +103,36 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
+        </div>
 
+        <div
+          className={`hidden lg:flex shrink-0 flex-col gap-5 self-stretch transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/3cf192fe-809f-4682-921d-f90748f50587.jpg"
+              alt="Ребёнок у стоматолога"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a0524231-34ac-42b5-92c6-260501891e0b.jpg"
+              alt="Здоровая улыбка ребёнка"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/ac165844-fd37-4c91-a45d-e4806c100e98.jpg"
+              alt="Детский стоматолог"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
