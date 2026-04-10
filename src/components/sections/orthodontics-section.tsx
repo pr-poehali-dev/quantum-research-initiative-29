@@ -109,12 +109,17 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2ff70494-a53a-4046-ae02-e907581e53eb.jpg"
             alt="Элайнеры"
-            className="h-[200px] w-[260px] rounded-3xl object-cover shadow-2xl mt-16"
+            className="h-[160px] w-[260px] rounded-3xl object-cover shadow-2xl mt-8"
           />
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/0e0355a9-25a0-4efc-a687-38c56805eca4.jpg"
             alt="Брекеты"
-            className="h-[200px] w-[260px] rounded-3xl object-cover shadow-2xl"
+            className="h-[160px] w-[260px] rounded-3xl object-cover shadow-2xl"
+          />
+          <img
+            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/a720afe8-999a-4172-80a5-0ca8d1ade2b8.jpg"
+            alt="Детские пластинки"
+            className="h-[160px] w-[260px] rounded-3xl object-cover shadow-2xl"
           />
         </div>
       </div>
