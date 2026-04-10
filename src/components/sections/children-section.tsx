@@ -129,25 +129,31 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
         </div>
 
         <div
-          className={`hidden lg:flex shrink-0 self-stretch flex-col gap-3 transition-all duration-700 ${
+          className={`hidden lg:flex shrink-0 flex-col gap-5 self-stretch transition-all duration-700 ${
             isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="relative flex-1 w-[380px] overflow-hidden rounded-3xl shadow-2xl">
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
             <img
               src="https://cdn.poehali.dev/files/b8754c46-9bde-4c82-8676-23be3c95b5fc.jpg"
               alt="Александра Васильевна на приёме"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-5 pb-4 pt-12">
-              <p className="font-sans text-sm font-semibold text-white md:text-base">
-                Александра Васильевна на приёме
-              </p>
-              <p className="mt-0.5 font-mono text-[11px] uppercase tracking-widest text-white/70">
-                Детский стоматолог · ортодонт
-              </p>
-            </div>
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/3cf192fe-809f-4682-921d-f90748f50587.jpg"
+              alt="Ребёнок у стоматолога"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a0524231-34ac-42b5-92c6-260501891e0b.jpg"
+              alt="Здоровая улыбка ребёнка"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
           </div>
         </div>
       </div>
