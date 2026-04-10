@@ -1,5 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
+import Icon from "@/components/ui/icon"
 
 export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
@@ -45,6 +46,28 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
             <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
               Лечение детей и подростков в доброжелательной атмосфере нашей клиники не травмирует психику Вашего ребёнка
               и гарантирует качество лечения.
+            </p>
+          </div>
+
+          <div
+            className="mt-5 max-w-2xl rounded-2xl border px-5 py-4"
+            style={{ borderColor: "#f472b630", background: "linear-gradient(135deg, #f472b610, #a78bfa10)" }}
+          >
+            <div className="mb-2 flex items-center gap-2">
+              <Icon name="Quote" size={18} className="text-pink-300" />
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Icon key={i} name="Star" size={12} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="ml-1 font-mono text-[10px] uppercase tracking-widest text-foreground/40">отзыв мамы</span>
+            </div>
+            <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
+              «Сын с трёх лет боялся стоматологов, после первого визита к Александре Васильевне сам просится на приём!
+              Дочке вылечили четыре зуба за один визит — без слёз и истерик. Спасибо за такое отношение к деткам!»
+            </p>
+            <p className="mt-2 font-mono text-xs text-foreground/50">
+              — Анна, мама Артёма (5 лет) и Софии (8 лет)
             </p>
           </div>
         </div>
