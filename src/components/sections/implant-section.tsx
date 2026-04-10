@@ -1,5 +1,8 @@
+import { useState } from "react"
 import { useReveal } from "@/hooks/use-reveal"
 import { MagneticButton } from "@/components/magnetic-button"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import Icon from "@/components/ui/icon"
 
 const services = [
   { title: "Одномоментная имплантация", description: "Установка импланта сразу после удаления зуба — без лишних визитов и долгого ожидания", price: "от 32 000 ₽", direction: "top" },
@@ -13,6 +16,7 @@ const services = [
 
 export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   return (
     <section
@@ -47,16 +51,19 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
               </p>
             </div>
 
-            <div className="relative w-full max-w-xs overflow-hidden rounded-xl border border-foreground/10 bg-foreground/5" style={{ aspectRatio: "16/9" }}>
-              <iframe
-                src="https://vk.com/video_ext.php?oid=153049679&id=456239772&hd=2"
-                className="absolute inset-0 h-full w-full"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                frameBorder="0"
-                allowFullScreen
-                title="Имплантация зубов"
-              />
-            </div>
+            <button
+              type="button"
+              onClick={() => setIsVideoOpen(true)}
+              className="group relative w-full max-w-xs overflow-hidden rounded-xl border border-foreground/10 bg-foreground/5 transition-all hover:border-foreground/30 hover:bg-foreground/10"
+              style={{ aspectRatio: "16/9" }}
+            >
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground/10 backdrop-blur transition-all group-hover:scale-110 group-hover:bg-foreground/20">
+                  <Icon name="Play" size={24} className="ml-1 text-foreground" />
+                </div>
+                <span className="font-mono text-xs uppercase tracking-widest text-foreground/60">Смотреть видео</span>
+              </div>
+            </button>
           </div>
         </div>
 
@@ -106,6 +113,24 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
       </div>
+
+      <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+        <DialogContent className="max-w-4xl border-foreground/10 bg-background p-0">
+          <DialogTitle className="sr-only">Имплантация зубов</DialogTitle>
+          <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "16/9" }}>
+            {isVideoOpen && (
+              <iframe
+                src="https://vk.com/video_ext.php?oid=153049679&id=456239772&hd=2&autoplay=1"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameBorder="0"
+                allowFullScreen
+                title="Имплантация зубов"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
