@@ -377,7 +377,7 @@ export default function Index() {
           <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "9/16" }}>
             {isHeroVideoOpen && (
               <iframe
-                src="https://vkvideo.ru/video_ext.php?oid=-237544957&id=456239020&hd=2&autoplay=1"
+                src="https://vkvideo.ru/video_ext.php?oid=-237544957&id=456239020&hd=2"
                 className="absolute inset-0 h-full w-full"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
                 frameBorder="0"
