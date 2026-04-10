@@ -108,9 +108,9 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
           <DialogTitle className="sr-only">Отличник стоматологии</DialogTitle>
           <div className="overflow-hidden rounded-lg">
             <img
-              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/9cdab6ce-8869-4106-9315-662d02fb5f96.jpg"
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/febd6b4a-816d-4fab-8662-9783a09e014b.jpg"
               alt="Грамота — Отличник стоматологии"
-              className="w-full"
+              className="mx-auto max-h-[70vh] w-auto"
             />
             <div className="px-6 py-4">
               <p className="font-sans text-base font-semibold text-foreground md:text-lg">
