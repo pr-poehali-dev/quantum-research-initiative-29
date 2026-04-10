@@ -30,7 +30,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           }`}
         >
           <h2
-            className="mb-0.5 font-sans text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
+            className="mb-2 font-sans text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl"
             style={{
               background: "linear-gradient(135deg, #f472b6, #a78bfa)",
               WebkitBackgroundClip: "text",
@@ -40,12 +40,12 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           >
             Имплантация
           </h2>
-          <p className="text-xs font-semibold text-foreground md:text-sm">Мы не просто устанавливаем импланты — мы корректируем работу всей зубочелюстной системы</p>
+          <p className="text-base font-semibold text-foreground md:text-lg">Мы не просто устанавливаем импланты — мы корректируем работу всей зубочелюстной системы</p>
 
-          <div className="mt-2 flex flex-col gap-2 md:flex-row md:items-center">
-            <div className="inline-flex flex-col gap-0.5 rounded-lg border border-foreground/10 bg-foreground/5 px-3 py-1.5">
-              <span className="font-mono text-[9px] uppercase tracking-widest text-foreground/40">Приём ведёт</span>
-              <p className="text-[11px] font-semibold text-foreground md:text-xs">
+          <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+            <div className="inline-flex flex-col gap-2 rounded-xl border border-foreground/10 bg-foreground/5 px-5 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">Приём ведёт</span>
+              <p className="text-sm font-semibold text-foreground md:text-base">
                 Демин Ефим Степанович
                 <span className="ml-2 font-normal text-foreground/50">· Стоматолог-хирург, имплантолог · стаж 12+ лет</span>
               </p>
@@ -87,12 +87,12 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                 className={`group transition-all duration-700 ${getRevealClass()}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mb-0.5 flex items-center gap-2">
-                  <div className="h-px w-5 bg-foreground/30 transition-all duration-300 group-hover:w-8 group-hover:bg-foreground/50" />
-                  <span className="font-mono text-[9px] text-foreground/60">0{i + 1}</span>
+                <div className="mb-1.5 flex items-center gap-3">
+                  <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
+                  <span className="font-mono text-xs text-foreground/60">0{i + 1}</span>
                 </div>
                 {service.image && (
-                  <div className="mb-1 overflow-hidden rounded-md border border-foreground/10" style={{ aspectRatio: "16/9" }}>
+                  <div className="mb-1.5 overflow-hidden rounded-md border border-foreground/10 max-w-[110px]" style={{ aspectRatio: "16/9" }}>
                     <img
                       src={service.image}
                       alt={service.title}
@@ -101,10 +101,10 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                     />
                   </div>
                 )}
-                <h3 className="mb-0 font-sans text-xs font-semibold text-foreground md:text-sm">{service.title}</h3>
-                <p className="text-[11px] leading-snug text-foreground/70">{service.description}</p>
+                <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:text-xl">{service.title}</h3>
+                <p className="max-w-sm text-sm leading-relaxed text-foreground/80">{service.description}</p>
                 {service.price && (
-                  <p className="mt-0.5 font-mono text-[11px] font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
+                  <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
                 )}
               </div>
             )
@@ -117,10 +117,10 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <MagneticButton size="sm" variant="primary" onClick={() => scrollToSection?.(10)}>
+          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
             Записаться на консультацию
           </MagneticButton>
-          <p className="mt-1.5 font-mono text-[9px] text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
+          <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
       </div>
 
