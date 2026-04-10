@@ -10,7 +10,8 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-10 items-stretch h-[calc(100vh-6rem)] md:h-[calc(100vh-4rem)]">
+        <div className="flex-1 min-w-0">
         <div
           className={`mb-10 transition-all duration-700 md:mb-14 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -125,7 +126,22 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
+        </div>
 
+        <div
+          className={`hidden lg:flex shrink-0 self-stretch transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <div className="h-full w-[380px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/files/b8754c46-9bde-4c82-8676-23be3c95b5fc.jpg"
+              alt="Лечение детей в нашей клинике"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
