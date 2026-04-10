@@ -135,7 +135,7 @@ function ServiceCard({
       </div>
       <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:text-xl">{service.title}</h3>
       <p className="max-w-sm text-sm leading-relaxed text-foreground/80">{service.description}</p>
-      <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#fbbf24" }}>{service.price}</p>
+      <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
     </div>
   )
 }
