@@ -12,12 +12,15 @@ import { ImplantSection } from "@/components/sections/implant-section"
 import { OrthodonticsSection } from "@/components/sections/orthodontics-section"
 import { OrthopedicsSection } from "@/components/sections/orthopedics-section"
 import { MagneticButton } from "@/components/magnetic-button"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import Icon from "@/components/ui/icon"
 import { useRef, useEffect, useState } from "react"
 
 export default function Index() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isHeroVideoOpen, setIsHeroVideoOpen] = useState(false)
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
@@ -313,6 +316,16 @@ export default function Index() {
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
                 Наши услуги
               </MagneticButton>
+              <button
+                type="button"
+                onClick={() => setIsHeroVideoOpen(true)}
+                className="group flex items-center gap-3 rounded-full border border-foreground/20 bg-foreground/10 px-5 py-3 backdrop-blur-md transition-all hover:border-foreground/40 hover:bg-foreground/20"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/15 transition-all group-hover:scale-110 group-hover:bg-foreground/25">
+                  <Icon name="Play" size={16} className="ml-0.5 text-foreground" />
+                </div>
+                <span className="font-sans text-sm font-medium text-foreground">Смотреть видео</span>
+              </button>
             </div>
           </div>
 
@@ -337,6 +350,24 @@ export default function Index() {
         <ReviewsSection />
         <ContactSection />
       </div>
+
+      <Dialog open={isHeroVideoOpen} onOpenChange={setIsHeroVideoOpen}>
+        <DialogContent className="max-w-sm border-foreground/10 bg-background p-0">
+          <DialogTitle className="sr-only">Видео о клинике</DialogTitle>
+          <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "9/16" }}>
+            {isHeroVideoOpen && (
+              <iframe
+                src="https://vkvideo.ru/video_ext.php?oid=-237544957&id=456239020&hd=2&autoplay=1"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                frameBorder="0"
+                allowFullScreen
+                title="Видео о клинике"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <style>{`
         div::-webkit-scrollbar {
