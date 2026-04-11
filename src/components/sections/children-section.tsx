@@ -113,15 +113,15 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
         >
           <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
             <img
-              src="https://cdn.poehali.dev/files/b8754c46-9bde-4c82-8676-23be3c95b5fc.jpg"
-              alt="Александра Васильевна на приёме"
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/67fa81b7-0dcf-43dd-8339-48c6ecd654eb.jpg"
+              alt="Малыш чистит зубы"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
           <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
             <img
-              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/67fa81b7-0dcf-43dd-8339-48c6ecd654eb.jpg"
-              alt="Малыш чистит зубы"
+              src="https://cdn.poehali.dev/files/b8754c46-9bde-4c82-8676-23be3c95b5fc.jpg"
+              alt="Александра Васильевна на приёме"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
