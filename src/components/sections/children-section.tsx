@@ -127,8 +127,8 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           </div>
           <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
             <img
-              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a0524231-34ac-42b5-92c6-260501891e0b.jpg"
-              alt="Здоровая улыбка ребёнка"
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/ae24e8a8-46df-43d8-b511-313aff78bb25.jpg"
+              alt="Счастливый ребёнок у стоматолога"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
