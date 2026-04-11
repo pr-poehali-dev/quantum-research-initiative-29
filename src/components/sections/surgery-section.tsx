@@ -92,15 +92,22 @@ export function SurgerySection({ scrollToSection }: { scrollToSection?: (index: 
         </div>
 
         <div
-          className={`hidden lg:flex shrink-0 items-center transition-all duration-700 ${
+          className={`hidden lg:flex shrink-0 flex-col justify-center gap-4 transition-all duration-700 ${
             isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="h-[420px] w-[260px] overflow-hidden rounded-3xl shadow-2xl">
+          <div className="h-[260px] w-[260px] overflow-hidden rounded-3xl shadow-2xl">
             <img
               src="https://cdn.poehali.dev/files/769dbed3-6595-4093-be3c-e6f87b439cbb.jpg"
               alt="Демин Ефим Степанович — стоматолог-хирург на приёме"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="h-[180px] w-[260px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/e3ae9d8e-0637-4cfc-b31f-6d909b5e43cb.jpg"
+              alt="Удаление зуба — бережно и безболезненно"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
