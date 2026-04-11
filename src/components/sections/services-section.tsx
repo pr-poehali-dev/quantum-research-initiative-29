@@ -12,7 +12,8 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-10 items-stretch h-[calc(100vh-6rem)] md:h-[calc(100vh-4rem)]">
+        <div className="flex-1 min-w-0 flex flex-col justify-center">
         <div
           className={`mb-6 transition-all duration-700 md:mb-8 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -103,7 +104,36 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
         </div>
+        </div>
 
+        <div
+          className={`hidden lg:flex shrink-0 flex-col gap-5 self-stretch transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/files/47498dc6-8404-496f-a941-075c638ad6fa.jpg"
+              alt="Лечение под микроскопом"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/34affbca-eefd-4bf5-a3d3-9ed9e48102a5.png"
+              alt="Лечение зубов крупным планом"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="https://cdn.poehali.dev/files/36d304f8-1fe7-4abd-970b-debef46bc51d.jpg"
+              alt="Наталья Алексеевна на приёме"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+        </div>
       </div>
 
       <Dialog open={isAwardOpen} onOpenChange={setIsAwardOpen}>
