@@ -101,16 +101,30 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
         </div>
 
         <div
-          className={`hidden lg:flex shrink-0 items-center transition-all duration-700 ${
+          className={`hidden lg:flex shrink-0 flex-col justify-center gap-4 transition-all duration-700 ${
             isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="w-[340px] overflow-hidden rounded-3xl shadow-2xl" style={{ aspectRatio: "3/4" }}>
+          <div className="w-[300px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-2xl" style={{ aspectRatio: "4/3" }}>
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/8cc958c6-7455-4120-a01c-2fcc30dbafda.jpg"
+              alt="Керамические виниры на модели"
+              className="h-full w-full object-contain transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+          <div className="w-[300px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-2xl" style={{ aspectRatio: "4/3" }}>
             <img
               src="https://cdn.poehali.dev/files/c89fb05d-f7e2-4d77-8e4b-df733ed18ce3.jpg"
               alt="Крецу Ион Иванович — врач-ортопед показывает модель протеза"
-              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+              className="h-full w-full object-contain transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+          <div className="w-[300px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-2xl" style={{ aspectRatio: "4/3" }}>
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/a0ba72b0-a6af-46b6-a0b6-00c02e26cbbe.jpg"
+              alt="Мостовидный протез на имплантах"
+              className="h-full w-full object-contain transition-transform duration-700 ease-out hover:scale-105"
             />
           </div>
         </div>
