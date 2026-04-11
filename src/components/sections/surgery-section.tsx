@@ -92,12 +92,12 @@ export function SurgerySection({ scrollToSection }: { scrollToSection?: (index: 
         </div>
 
         <div
-          className={`hidden lg:flex shrink-0 flex-col gap-5 self-stretch transition-all duration-700 ${
+          className={`hidden lg:flex shrink-0 h-full flex-col gap-5 transition-all duration-700 ${
             isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="flex-1 w-[340px] overflow-hidden rounded-3xl shadow-2xl">
+          <div className="h-full w-[340px] overflow-hidden rounded-3xl shadow-2xl">
             <img
               src="https://cdn.poehali.dev/files/769dbed3-6595-4093-be3c-e6f87b439cbb.jpg"
               alt="Демин Ефим Степанович — стоматолог-хирург на приёме"
