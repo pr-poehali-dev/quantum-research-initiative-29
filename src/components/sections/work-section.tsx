@@ -24,7 +24,7 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Виниры за 2 визита",
+              title: "Виниры",
               category: "Эстетическая стоматология",
               year: "2025",
               direction: "left",
