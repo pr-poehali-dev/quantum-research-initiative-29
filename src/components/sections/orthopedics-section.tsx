@@ -18,7 +18,8 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-10 items-stretch h-[calc(100vh-6rem)] md:h-[calc(100vh-4rem)]">
+        <div className="flex-1 min-w-0 flex flex-col justify-center">
         <div
           className={`mb-8 transition-all duration-700 md:mb-12 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -96,6 +97,22 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
+        </div>
+        </div>
+
+        <div
+          className={`hidden lg:flex shrink-0 items-center transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <div className="w-[340px] overflow-hidden rounded-3xl shadow-2xl" style={{ aspectRatio: "3/4" }}>
+            <img
+              src="https://cdn.poehali.dev/files/c89fb05d-f7e2-4d77-8e4b-df733ed18ce3.jpg"
+              alt="Крецу Ион Иванович — врач-ортопед показывает модель протеза"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
         </div>
       </div>
     </section>
