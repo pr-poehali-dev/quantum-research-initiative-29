@@ -92,7 +92,7 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
+          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(11)}>
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>

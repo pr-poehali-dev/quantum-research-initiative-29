@@ -98,7 +98,7 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           className={`mt-8 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
           style={{ transitionDelay: "700ms" }}
         >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
+          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(11)}>
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>

@@ -9,6 +9,7 @@ import { DoctorsSection } from "@/components/sections/doctors-section"
 import { ChildrenSection } from "@/components/sections/children-section"
 import { ReviewsSection } from "@/components/sections/reviews-section"
 import { ImplantSection } from "@/components/sections/implant-section"
+import { SurgerySection } from "@/components/sections/surgery-section"
 import { OrthodonticsSection } from "@/components/sections/orthodontics-section"
 import { OrthopedicsSection } from "@/components/sections/orthopedics-section"
 import { MagneticButton } from "@/components/magnetic-button"
@@ -86,7 +87,7 @@ export default function Index() {
       const deltaX = touchStartX.current - touchEndX
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 4) {
+        if (deltaY > 0 && currentSection < 11) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
           scrollToSection(currentSection - 1)
@@ -156,7 +157,7 @@ export default function Index() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 10) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 11) {
           setCurrentSection(newSection)
         }
 
@@ -236,7 +237,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
+          {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Хирургия", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -254,7 +255,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(10)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
           Записаться
         </MagneticButton>
       </nav>
@@ -365,6 +366,7 @@ export default function Index() {
         <ChildrenSection scrollToSection={scrollToSection} />
         <OrthodonticsSection scrollToSection={scrollToSection} />
         <ImplantSection scrollToSection={scrollToSection} />
+        <SurgerySection scrollToSection={scrollToSection} />
         <OrthopedicsSection scrollToSection={scrollToSection} />
         <AboutSection scrollToSection={scrollToSection} />
         <ReviewsSection />

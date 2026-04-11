@@ -14,12 +14,7 @@ const services = [
   { title: "Наращивание кости с аутотрансплантатом", description: "Использование собственной кости пациента — наиболее биологически совместимый метод", price: "от 6 000 ₽", direction: "right", image: "" },
 ]
 
-const surgery = [
-  { title: "Удаление зуба", description: "Безболезненное удаление зубов любой сложности с современной анестезией", price: "от 2 500 ₽", direction: "left" },
-  { title: "Удаление зуба мудрости", description: "Удаление ретинированных и дистопированных «восьмёрок» — быстро и аккуратно", price: "от 5 500 ₽", direction: "top" },
-  { title: "Резекция верхушки корня", description: "Зубосохраняющая операция при кистах и гранулёмах у корня зуба", price: "от 7 000 ₽", direction: "right" },
-  { title: "Пластика уздечки", description: "Коррекция уздечки губы или языка — быстрая операция с минимальным дискомфортом", price: "от 4 500 ₽", direction: "bottom" },
-]
+
 
 export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
   const { ref, isVisible } = useReveal(0.3)
@@ -119,52 +114,12 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
         </div>
 
         <div
-          className={`mt-5 border-t border-foreground/10 pt-4 transition-all duration-700 ${
+          className={`mt-3 transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
-          style={{ transitionDelay: "600ms" }}
+          style={{ transitionDelay: "700ms" }}
         >
-          <div className="mb-3 flex items-center gap-3">
-            <Icon name="Scissors" size={18} className="text-foreground/60" />
-            <h3
-              className="font-sans text-2xl font-bold tracking-tight md:text-3xl"
-              style={{
-                background: "linear-gradient(135deg, #f472b6, #a78bfa)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Хирургия
-            </h3>
-            <span className="font-mono text-xs uppercase tracking-widest text-foreground/40">/ Зубосохраняющие операции и удаления</span>
-          </div>
-          <div className="grid gap-2 md:grid-cols-4 md:gap-3">
-            {surgery.map((s, i) => (
-              <div
-                key={i}
-                className="group rounded-xl border border-foreground/10 bg-foreground/5 px-4 py-3 transition-all hover:border-foreground/25 hover:bg-foreground/10"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="mb-1 flex items-center gap-2">
-                  <div className="h-px w-6 bg-foreground/30 transition-all duration-300 group-hover:w-10 group-hover:bg-foreground/50" />
-                  <span className="font-mono text-[10px] text-foreground/50">0{i + 1}</span>
-                </div>
-                <h4 className="mb-1 font-sans text-base font-semibold text-foreground md:text-lg">{s.title}</h4>
-                <p className="text-xs leading-relaxed text-foreground/70 md:text-sm">{s.description}</p>
-                <p className="mt-1.5 font-mono text-xs font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 10px rgba(251, 191, 36, 0.45)" }}>{s.price}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className={`mt-4 transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
-          style={{ transitionDelay: "800ms" }}
-        >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(10)}>
+          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(11)}>
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-3 font-mono text-xs text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
