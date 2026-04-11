@@ -67,17 +67,17 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
         <div className="hidden md:flex gap-x-8 lg:gap-x-10 items-start">
           <div className="flex flex-col gap-3 flex-1">
             {[
-              { title: "Лечение кариеса", description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии", price: "от 3 500 ₽", direction: "top", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a86383f7-b02b-40fe-b28c-f067e0843ac2.jpg" },
-              { title: "Лечение пульпита и периодонтита", description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли", price: "от 9 500 ₽", direction: "left", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/ced4deed-dfa6-4d6e-a8af-6460102bc0c6.jpg" },
-              { title: "Гигиена и профилактика", description: "Профессиональная чистка зубов, снятие налёта и камня — залог здоровья и красивой улыбки", price: "от 150 ₽ за зуб", direction: "left", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/34e77ef0-316b-45d9-a469-7efc7ebc376c.jpg" },
+              { title: "Лечение кариеса", description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии", price: "от 3 500 ₽", direction: "top" },
+              { title: "Лечение пульпита и периодонтита", description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли", price: "от 9 500 ₽", direction: "left" },
+              { title: "Гигиена и профилактика", description: "Профессиональная чистка зубов, снятие налёта и камня — залог здоровья и красивой улыбки", price: "от 150 ₽ за зуб", direction: "left" },
             ].map((service, i) => (
               <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
             ))}
           </div>
           <div className="flex flex-col gap-3 flex-1 mt-4">
             {[
-              { title: "Эстетическая реставрация и композитные виниры", description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров", price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽", direction: "right", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/4756144b-df77-49cf-9089-74b9dc654009.jpg" },
-              { title: "Перелечивание каналов под микроскопом", description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно", price: "от 12 000 ₽", direction: "bottom", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/200142b7-f175-4266-bdfe-0e447604a4c6.jpg" },
+              { title: "Эстетическая реставрация и композитные виниры", description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров", price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽", direction: "right" },
+              { title: "Перелечивание каналов под микроскопом", description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно", price: "от 12 000 ₽", direction: "bottom" },
             ].map((service, i) => (
               <ServiceCard key={i + 3} service={service} index={i + 3} isVisible={isVisible} />
             ))}
@@ -85,11 +85,11 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
         </div>
         <div className="flex flex-col gap-5 md:hidden">
           {[
-            { title: "Лечение кариеса", description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии", price: "от 3 500 ₽", direction: "top", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a86383f7-b02b-40fe-b28c-f067e0843ac2.jpg" },
-            { title: "Эстетическая реставрация и композитные виниры", description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров", price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽", direction: "right", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/4756144b-df77-49cf-9089-74b9dc654009.jpg" },
-            { title: "Лечение пульпита и периодонтита", description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли", price: "от 9 500 ₽", direction: "left", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/ced4deed-dfa6-4d6e-a8af-6460102bc0c6.jpg" },
-            { title: "Перелечивание каналов под микроскопом", description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно", price: "от 12 000 ₽", direction: "bottom", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/200142b7-f175-4266-bdfe-0e447604a4c6.jpg" },
-            { title: "Гигиена и профилактика", description: "Профессиональная чистка зубов, снятие налёта и камня — залог здоровья и красивой улыбки", price: "от 150 ₽ за зуб", direction: "left", image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/34e77ef0-316b-45d9-a469-7efc7ebc376c.jpg" },
+            { title: "Лечение кариеса", description: "Безболезненное лечение кариеса любой стадии с использованием современных материалов и анестезии", price: "от 3 500 ₽", direction: "top" },
+            { title: "Эстетическая реставрация и композитные виниры", description: "Восстановление формы, цвета и эстетики зубов с помощью художественной реставрации и тонких композитных виниров", price: "реставрация от 5 000 ₽ · виниры от 13 500 ₽", direction: "right" },
+            { title: "Лечение пульпита и периодонтита", description: "Качественное эндодонтическое лечение воспалений пульпы и корневых каналов — быстро и без боли", price: "от 9 500 ₽", direction: "left" },
+            { title: "Перелечивание каналов под микроскопом", description: "Повторное лечение корневых каналов любой сложности под операционным микроскопом — точно и надёжно", price: "от 12 000 ₽", direction: "bottom" },
+            { title: "Гигиена и профилактика", description: "Профессиональная чистка зубов, снятие налёта и камня — залог здоровья и красивой улыбки", price: "от 150 ₽ за зуб", direction: "left" },
           ].map((service, i) => (
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
           ))}
@@ -165,7 +165,7 @@ function ServiceCard({
   index,
   isVisible,
 }: {
-  service: { title: string; description: string; price: string; direction: string; image?: string }
+  service: { title: string; description: string; price: string; direction: string }
   index: number
   isVisible: boolean
 }) {
@@ -189,29 +189,17 @@ function ServiceCard({
 
   return (
     <div
-      className={`group flex items-start gap-4 transition-all duration-700 ${getRevealClass()}`}
+      className={`group transition-all duration-700 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
       }}
     >
-      {service.image && (
-        <div className="relative shrink-0 overflow-hidden rounded-xl border border-foreground/10">
-          <img
-            src={service.image}
-            alt={service.title}
-            className="h-20 w-20 object-cover transition-transform duration-500 group-hover:scale-110 md:h-24 md:w-24"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-        </div>
-      )}
-      <div className="flex-1 min-w-0">
-        <div className="mb-1.5 flex items-center gap-3">
-          <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-        </div>
-        <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:text-xl">{service.title}</h3>
-        <p className="max-w-sm text-sm leading-relaxed text-foreground/80">{service.description}</p>
-        <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
+      <div className="mb-1.5 flex items-center gap-3">
+        <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
       </div>
+      <h3 className="mb-1 font-sans text-lg font-semibold text-foreground md:text-xl">{service.title}</h3>
+      <p className="max-w-sm text-sm leading-relaxed text-foreground/80">{service.description}</p>
+      <p className="mt-2 font-mono text-sm font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
     </div>
   )
 }
