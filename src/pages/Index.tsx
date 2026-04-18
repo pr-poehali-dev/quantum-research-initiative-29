@@ -225,16 +225,7 @@ export default function Index() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <button
-          onClick={() => scrollToSection(0)}
-          className="flex items-center gap-2 transition-transform hover:scale-105"
-        >
-          <img
-            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
-            alt="Зубные феи"
-            className="h-16 w-auto"
-          />
-        </button>
+        <div />
 
         <div className="hidden items-center gap-8 md:flex">
           {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Хирургия", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
