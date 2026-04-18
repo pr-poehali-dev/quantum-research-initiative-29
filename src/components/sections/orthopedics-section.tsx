@@ -106,21 +106,21 @@ export function OrthopedicsSection({ scrollToSection }: { scrollToSection?: (ind
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="w-[240px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
+          <div className="w-[260px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/8cc958c6-7455-4120-a01c-2fcc30dbafda.jpg"
               alt="Керамические виниры на модели"
               className="h-full w-full object-contain transition-transform duration-700 ease-out hover:scale-105"
             />
           </div>
-          <div className="w-[240px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
+          <div className="w-[260px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
             <img
               src="https://cdn.poehali.dev/files/c89fb05d-f7e2-4d77-8e4b-df733ed18ce3.jpg"
               alt="Крецу Ион Иванович — врач-ортопед показывает модель протеза"
               className="h-full w-full object-contain transition-transform duration-700 ease-out hover:scale-105"
             />
           </div>
-          <div className="w-[240px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
+          <div className="w-[260px] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 shadow-xl" style={{ aspectRatio: "4/3" }}>
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/a0ba72b0-a6af-46b6-a0b6-00c02e26cbbe.jpg"
               alt="Мостовидный протез на имплантах"
