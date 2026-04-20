@@ -19,9 +19,7 @@ export function ServicesSection({ scrollToSection }: { scrollToSection?: (index:
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-1 font-sans text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
-            style={{ background: "linear-gradient(135deg, #f472b6, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
-          >
+          <h2 className="mb-1 font-sans text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
             Терапевтическая стоматология
           </h2>
           <p className="text-sm font-semibold text-foreground md:text-base">Лечим правильно, честно, с результатом</p>
