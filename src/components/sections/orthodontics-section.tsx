@@ -24,7 +24,16 @@ export function OrthodonticsSection({ scrollToSection }: { scrollToSection?: (in
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-1 font-sans text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+          <h2
+            className="mb-1 font-sans text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
+            style={{
+              background: "linear-gradient(135deg, #f472b6, #a78bfa)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: "drop-shadow(0 0 6px rgba(255,255,255,0.9)) drop-shadow(0 0 14px rgba(255,255,255,0.6)) drop-shadow(0 0 28px rgba(255,255,255,0.35))",
+            }}
+          >
             Ортодонтия
           </h2>
           <p className="text-sm font-semibold text-foreground md:text-base">Исправляем прикус и создаём гармоничную улыбку</p>
