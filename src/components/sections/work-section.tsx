@@ -43,6 +43,8 @@ export function WorkSection() {
       image: "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
       gallery: [
         "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
+        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/36883415-a15b-44fb-9ebc-11c621f7c4e9.jpg",
+        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/ec889f94-1d95-413d-978a-5271137aaea3.jpg",
       ],
     },
   ]
