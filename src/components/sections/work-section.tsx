@@ -1,7 +1,51 @@
+import { useState } from "react"
 import { useReveal } from "@/hooks/use-reveal"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import Icon from "@/components/ui/icon"
+
+type Project = {
+  number: string
+  title: string
+  category: string
+  year: string
+  direction: string
+  image?: string
+  gallery?: string[]
+}
 
 export function WorkSection() {
   const { ref, isVisible } = useReveal(0.3)
+  const [openProject, setOpenProject] = useState<Project | null>(null)
+
+  const projects: Project[] = [
+    {
+      number: "01",
+      title: "Виниры",
+      category: "Эстетическая стоматология",
+      year: "2025",
+      direction: "left",
+      image: "",
+    },
+    {
+      number: "02",
+      title: "Имплантация под ключ",
+      category: "Имплантология",
+      year: "2025",
+      direction: "right",
+      image: "",
+    },
+    {
+      number: "03",
+      title: "Исправление прикуса",
+      category: "Ортодонтия · брекеты и элайнеры",
+      year: "2024",
+      direction: "left",
+      image: "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
+      gallery: [
+        "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
+      ],
+    },
+  ]
 
   return (
     <section
@@ -21,36 +65,37 @@ export function WorkSection() {
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          {[
-            {
-              number: "01",
-              title: "Виниры",
-              category: "Эстетическая стоматология",
-              year: "2025",
-              direction: "left",
-              image: "",
-            },
-            {
-              number: "02",
-              title: "Имплантация под ключ",
-              category: "Имплантология",
-              year: "2025",
-              direction: "right",
-              image: "",
-            },
-            {
-              number: "03",
-              title: "Исправление прикуса",
-              category: "Ортодонтия · брекеты и элайнеры",
-              year: "2024",
-              direction: "left",
-              image: "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
-            },
-          ].map((project, i) => (
-            <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={i}
+              project={project}
+              index={i}
+              isVisible={isVisible}
+              onOpen={() => project.gallery && setOpenProject(project)}
+            />
           ))}
         </div>
       </div>
+
+      <Dialog open={!!openProject} onOpenChange={(open) => !open && setOpenProject(null)}>
+        <DialogContent className="max-w-5xl">
+          <DialogHeader>
+            <DialogTitle className="font-sans text-2xl font-light">
+              {openProject?.title}
+            </DialogTitle>
+            <p className="font-mono text-xs text-foreground/60">
+              {openProject?.category} · {openProject?.year}
+            </p>
+          </DialogHeader>
+          <div className="grid gap-4">
+            {openProject?.gallery?.map((src, idx) => (
+              <div key={idx} className="overflow-hidden rounded-xl">
+                <img src={src} alt={`${openProject.title} ${idx + 1}`} className="h-auto w-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
@@ -59,10 +104,12 @@ function ProjectCard({
   project,
   index,
   isVisible,
+  onOpen,
 }: {
-  project: { number: string; title: string; category: string; year: string; direction: string; image?: string }
+  project: Project
   index: number
   isVisible: boolean
+  onOpen: () => void
 }) {
   const getRevealClass = () => {
     if (!isVisible) {
@@ -71,9 +118,22 @@ function ProjectCard({
     return "translate-x-0 opacity-100"
   }
 
+  const isClickable = !!project.gallery
+
   return (
     <div
-      className={`group flex items-center justify-between border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 md:py-8 ${getRevealClass()}`}
+      onClick={isClickable ? onOpen : undefined}
+      role={isClickable ? "button" : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+      onKeyDown={(e) => {
+        if (isClickable && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault()
+          onOpen()
+        }
+      }}
+      className={`group flex items-center justify-between border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 md:py-8 ${getRevealClass()} ${
+        isClickable ? "cursor-pointer hover:bg-foreground/5 rounded-xl px-3 md:px-4" : ""
+      }`}
       style={{
         transitionDelay: `${index * 150}ms`,
         marginLeft: index % 2 === 0 ? "0" : "auto",
@@ -100,7 +160,14 @@ function ProjectCard({
           <p className="font-mono text-xs text-foreground/50 md:text-sm">{project.category}</p>
         </div>
       </div>
-      <span className="font-mono text-xs text-foreground/30 md:text-sm">{project.year}</span>
+      <div className="flex items-center gap-3">
+        <span className="font-mono text-xs text-foreground/30 md:text-sm">{project.year}</span>
+        {isClickable && (
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/5 text-foreground/60 transition-all group-hover:bg-foreground group-hover:text-background md:h-10 md:w-10">
+            <Icon name="ArrowUpRight" size={18} />
+          </span>
+        )}
+      </div>
     </div>
   )
 }
