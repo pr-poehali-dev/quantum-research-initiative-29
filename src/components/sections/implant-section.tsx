@@ -70,7 +70,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           </div>
         </div>
 
-        <div className="grid gap-2 md:grid-cols-3 md:gap-3">
+        <div className="grid gap-2 md:grid-cols-4 md:gap-3">
           {services.map((service, i) => {
             const getRevealClass = () => {
               if (!isVisible) {
@@ -95,7 +95,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                   <span className="font-mono text-[10px] text-foreground/60">0{i + 1}</span>
                 </div>
                 {service.image && (
-                  <div className="mb-1 overflow-hidden rounded-md border border-foreground/10 max-w-[90px]" style={{ aspectRatio: "16/9" }}>
+                  <div className="mb-1 overflow-hidden rounded-md border border-foreground/10 max-w-[70px]" style={{ aspectRatio: "16/9" }}>
                     <img
                       src={service.image}
                       alt={service.title}
@@ -104,10 +104,10 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                     />
                   </div>
                 )}
-                <h3 className="mb-1 font-sans text-base font-semibold text-foreground md:text-lg transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
-                <p className="max-w-sm text-sm leading-snug text-foreground/80 md:text-base">{service.description}</p>
+                <h3 className="mb-0.5 font-sans text-xs font-semibold text-foreground md:text-sm transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
+                <p className="text-[11px] leading-snug text-foreground/80 md:text-xs">{service.description}</p>
                 {service.price && (
-                  <p className="mt-1 font-mono text-sm font-semibold md:text-base" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
+                  <p className="mt-0.5 font-mono text-[11px] font-semibold md:text-xs" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
                 )}
               </div>
             )
