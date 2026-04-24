@@ -25,7 +25,8 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl flex gap-6 lg:gap-8 items-stretch h-[calc(100vh-5rem)] md:h-[calc(100vh-3rem)] py-4">
+        <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
         <div
           className={`mb-3 transition-all duration-700 md:mb-4 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
@@ -127,6 +128,36 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
             Записаться на консультацию
           </MagneticButton>
           <p className="mt-2 font-mono text-[10px] text-foreground/40">Окончательная стоимость определяется на консультации при составлении плана лечения</p>
+        </div>
+        </div>
+
+        <div
+          className={`hidden lg:flex shrink-0 flex-col gap-3 self-stretch transition-all duration-700 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <div className="flex-1 w-[260px] overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/84dc439d-d50a-4524-acea-dd4e2e7adc07.jpg"
+              alt="Имплантация — операция"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[260px] overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/5969d77b-333e-4a0f-b45a-3e31f059c77d.jpg"
+              alt="Результат имплантации"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 w-[260px] overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/698f798f-6504-4c84-bd3d-9f1bd01732a7.jpg"
+              alt="Современная операционная"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+            />
+          </div>
         </div>
       </div>
 
