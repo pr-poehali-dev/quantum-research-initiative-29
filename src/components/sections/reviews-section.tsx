@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal"
+import Icon from "@/components/ui/icon"
 
 const reviews = [
   {
@@ -34,6 +35,10 @@ export function ReviewsSection() {
     <section
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
+      style={{
+        background:
+          "linear-gradient(135deg, #fce7f3 0%, #ede9fe 40%, #e0f2fe 70%, #fef3c7 100%)",
+      }}
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
@@ -70,8 +75,9 @@ export function ReviewsSection() {
               href="https://prodoctorov.ru/ryazan/lpu/30220-zubnye-fei/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1 underline-offset-4 hover:underline"
             >
+              <Icon name="Stethoscope" size={16} />
               ПроДокторов
             </a>
             ,{" "}
@@ -79,8 +85,9 @@ export function ReviewsSection() {
               href="https://zoon.ru/ryazan/medical/stomatologicheskaya_klinika_zubnye_fei_na_ulitse_mayakovskogo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1 underline-offset-4 hover:underline"
             >
+              <Icon name="Star" size={16} />
               Zoon
             </a>{" "}
             и{" "}
@@ -88,8 +95,9 @@ export function ReviewsSection() {
               href="https://yandex.ru/maps/org/zubnyye_fei/1121481337/?ll=39.736467%2C54.623945&z=15"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1 underline-offset-4 hover:underline"
             >
+              <Icon name="MapPin" size={16} />
               Яндекс
             </a>
             .
