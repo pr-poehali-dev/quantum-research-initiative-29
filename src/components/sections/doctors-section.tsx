@@ -90,7 +90,9 @@ export function DoctorsSection() {
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
                 {"photo" in doctor && doctor.photo ? (
-                  <div className="mb-3 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-foreground/20">
+                  <div
+                    className="mb-3 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-foreground/20 transition-all duration-500 group-hover:border-transparent group-hover:shadow-[0_0_0_2px_#f472b6,0_0_25px_rgba(167,139,250,0.6),0_0_50px_rgba(244,114,182,0.35)]"
+                  >
                     <img src={doctor.photo} alt={doctor.name} className={`h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 ${doctor.name.includes("Демин") ? "object-[center_15%]" : "object-top"}`} />
                   </div>
                 ) : (
