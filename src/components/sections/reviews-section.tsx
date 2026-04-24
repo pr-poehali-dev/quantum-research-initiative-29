@@ -38,9 +38,13 @@ export function ReviewsSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-12 inline-block rounded-3xl px-6 py-5 transition-all duration-700 md:mb-16 md:px-10 md:py-7 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
+          style={{
+            background:
+              "linear-gradient(135deg, #fce7f3 0%, #ede9fe 40%, #e0f2fe 70%, #fef3c7 100%)",
+          }}
         >
           <h2
             className="mb-2 font-sans text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl"
