@@ -54,6 +54,39 @@ export function ReviewsSection() {
             Отзывы
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Что говорят наши пациенты</p>
+          <p className="mt-3 text-sm text-foreground/70 md:text-base">
+            Больше отзывов о нашей клинике можно прочитать на{" "}
+            <a
+              href="https://prodoctorov.ru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline-offset-4 hover:underline"
+              style={{ color: "#c084fc" }}
+            >
+              ПроДокторов
+            </a>
+            ,{" "}
+            <a
+              href="https://zoon.ru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline-offset-4 hover:underline"
+              style={{ color: "#c084fc" }}
+            >
+              Zoon
+            </a>{" "}
+            и{" "}
+            <a
+              href="https://yandex.ru/maps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline-offset-4 hover:underline"
+              style={{ color: "#c084fc" }}
+            >
+              Яндекс
+            </a>
+            .
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
