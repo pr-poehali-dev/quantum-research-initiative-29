@@ -28,6 +28,7 @@ export function WorkSection() {
               category: "Эстетическая стоматология",
               year: "2025",
               direction: "left",
+              image: "",
             },
             {
               number: "02",
@@ -35,6 +36,7 @@ export function WorkSection() {
               category: "Имплантология",
               year: "2025",
               direction: "right",
+              image: "",
             },
             {
               number: "03",
@@ -42,6 +44,7 @@ export function WorkSection() {
               category: "Ортодонтия · брекеты и элайнеры",
               year: "2024",
               direction: "left",
+              image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/151078de-3159-4194-8615-dd18c46a4565.jpg",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
@@ -57,7 +60,7 @@ function ProjectCard({
   index,
   isVisible,
 }: {
-  project: { number: string; title: string; category: string; year: string; direction: string }
+  project: { number: string; title: string; category: string; year: string; direction: string; image?: string }
   index: number
   isVisible: boolean
 }) {
@@ -77,10 +80,19 @@ function ProjectCard({
         maxWidth: index % 2 === 0 ? "85%" : "90%",
       }}
     >
-      <div className="flex items-baseline gap-4 md:gap-8">
+      <div className="flex items-center gap-4 md:gap-8">
         <span className="font-mono text-sm text-foreground/30 transition-colors group-hover:text-foreground/50 md:text-base">
           {project.number}
         </span>
+        {project.image && (
+          <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl shadow-md md:h-20 md:w-20">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+        )}
         <div>
           <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
             {project.title}
