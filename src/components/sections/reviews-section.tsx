@@ -67,7 +67,7 @@ export function ReviewsSection() {
           >
             Больше отзывов о нашей клинике можно прочитать на{" "}
             <a
-              href="https://prodoctorov.ru"
+              href="https://prodoctorov.ru/ryazan/lpu/30220-zubnye-fei/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline-offset-4 hover:underline"
