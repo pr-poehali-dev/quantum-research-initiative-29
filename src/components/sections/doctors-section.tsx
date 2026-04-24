@@ -90,7 +90,7 @@ export function DoctorsSection() {
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
                 {"photo" in doctor && doctor.photo ? (
-                  <div className="mb-3 h-40 w-40 overflow-hidden rounded-2xl border border-foreground/20">
+                  <div className="mb-3 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-foreground/20">
                     <img src={doctor.photo} alt={doctor.name} className={`h-full w-full object-cover ${doctor.name.includes("Демин") ? "object-[center_15%]" : "object-top"}`} />
                   </div>
                 ) : (
