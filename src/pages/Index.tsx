@@ -192,8 +192,8 @@ export default function Index() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#f5a97f"
-            colorB="#e8724c"
+            colorA="#c8b6f0"
+            colorB="#f6c2a8"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -205,11 +205,11 @@ export default function Index() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#f6c28b"
-            upColor="#f8d3a5"
-            downColor="#d98c5f"
-            leftColor="#e8724c"
-            rightColor="#f4a261"
+            baseColor="#ddc9f5"
+            upColor="#e8d8fb"
+            downColor="#fbd5c2"
+            leftColor="#b9a3e6"
+            rightColor="#f6b69a"
             intensity={0.9}
             radius={1.8}
             momentum={25}
