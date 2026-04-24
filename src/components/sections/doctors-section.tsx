@@ -91,7 +91,7 @@ export function DoctorsSection() {
               >
                 {"photo" in doctor && doctor.photo ? (
                   <div className="mb-3 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-foreground/20">
-                    <img src={doctor.photo} alt={doctor.name} className={`h-full w-full object-cover ${doctor.name.includes("Демин") ? "object-[center_15%]" : "object-top"}`} />
+                    <img src={doctor.photo} alt={doctor.name} className={`h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 ${doctor.name.includes("Демин") ? "object-[center_15%]" : "object-top"}`} />
                   </div>
                 ) : (
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/20 bg-foreground/5 text-xl font-bold text-foreground/30">
