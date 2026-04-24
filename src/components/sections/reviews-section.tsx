@@ -35,10 +35,6 @@ export function ReviewsSection() {
     <section
       ref={ref}
       className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
-      style={{
-        background:
-          "linear-gradient(135deg, #fce7f3 0%, #ede9fe 40%, #e0f2fe 70%, #fef3c7 100%)",
-      }}
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
