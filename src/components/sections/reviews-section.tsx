@@ -76,7 +76,7 @@ export function ReviewsSection() {
             </a>
             ,{" "}
             <a
-              href="https://zoon.ru"
+              href="https://zoon.ru/ryazan/medical/stomatologicheskaya_klinika_zubnye_fei_na_ulitse_mayakovskogo/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline-offset-4 hover:underline"
@@ -85,7 +85,7 @@ export function ReviewsSection() {
             </a>{" "}
             и{" "}
             <a
-              href="https://yandex.ru/maps"
+              href="https://yandex.ru/maps/org/zubnyye_fei/1121481337/?ll=39.736467%2C54.623945&z=15"
               target="_blank"
               rel="noopener noreferrer"
               className="underline-offset-4 hover:underline"
