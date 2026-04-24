@@ -54,14 +54,23 @@ export function ReviewsSection() {
             Отзывы
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ Что говорят наши пациенты</p>
-          <p className="mt-3 text-sm text-foreground/70 md:text-base">
+          <p
+            className="mt-3 text-sm font-semibold md:text-base"
+            style={{
+              background: "linear-gradient(135deg, #f472b6, #a78bfa)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter:
+                "drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px rgba(255,255,255,0.95)) drop-shadow(0 0 10px rgba(255,255,255,0.7))",
+            }}
+          >
             Больше отзывов о нашей клинике можно прочитать на{" "}
             <a
               href="https://prodoctorov.ru"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold underline-offset-4 hover:underline"
-              style={{ color: "#c084fc" }}
+              className="underline-offset-4 hover:underline"
             >
               ПроДокторов
             </a>
@@ -70,8 +79,7 @@ export function ReviewsSection() {
               href="https://zoon.ru"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold underline-offset-4 hover:underline"
-              style={{ color: "#c084fc" }}
+              className="underline-offset-4 hover:underline"
             >
               Zoon
             </a>{" "}
@@ -80,8 +88,7 @@ export function ReviewsSection() {
               href="https://yandex.ru/maps"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold underline-offset-4 hover:underline"
-              style={{ color: "#c084fc" }}
+              className="underline-offset-4 hover:underline"
             >
               Яндекс
             </a>
