@@ -44,7 +44,7 @@ export function WorkSection() {
               category: "Ортодонтия · брекеты и элайнеры",
               year: "2024",
               direction: "left",
-              image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/151078de-3159-4194-8615-dd18c46a4565.jpg",
+              image: "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
