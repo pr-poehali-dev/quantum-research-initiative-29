@@ -24,7 +24,10 @@ export function WorkSection() {
       category: "Эстетическая стоматология",
       year: "2025",
       direction: "left",
-      image: "",
+      image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/2d378ddc-e475-4c5c-a481-8a79b6ac9bd7.jpg",
+      gallery: [
+        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/2d378ddc-e475-4c5c-a481-8a79b6ac9bd7.jpg",
+      ],
     },
     {
       number: "02",
@@ -32,7 +35,10 @@ export function WorkSection() {
       category: "Имплантология",
       year: "2025",
       direction: "right",
-      image: "",
+      image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/d9e46012-2582-4846-8a12-bdf56aff56eb.jpg",
+      gallery: [
+        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/d9e46012-2582-4846-8a12-bdf56aff56eb.jpg",
+      ],
     },
     {
       number: "03",
@@ -45,6 +51,7 @@ export function WorkSection() {
         "https://cdn.poehali.dev/files/18f38e88-128a-4cb8-bafc-3cb7a9639c3e.jpg",
         "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/36883415-a15b-44fb-9ebc-11c621f7c4e9.jpg",
         "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/ec889f94-1d95-413d-978a-5271137aaea3.jpg",
+        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/a58f95d3-c973-4e62-810c-1b482aa4273b.jpg",
       ],
     },
   ]
