@@ -104,7 +104,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
                     />
                   </div>
                 )}
-                <h3 className="mb-0.5 font-sans text-sm font-semibold text-foreground md:text-base">{service.title}</h3>
+                <h3 className="mb-0.5 font-sans text-sm font-semibold text-foreground md:text-base transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
                 <p className="max-w-sm text-xs leading-snug text-foreground/80">{service.description}</p>
                 {service.price && (
                   <p className="mt-1 font-mono text-xs font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
