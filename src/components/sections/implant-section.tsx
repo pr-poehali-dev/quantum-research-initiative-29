@@ -70,7 +70,7 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           </div>
         </div>
 
-        <div className="grid gap-2 md:grid-cols-4 md:gap-3">
+        <div className="hidden md:grid grid-cols-2 gap-x-5 gap-y-2 lg:gap-x-6">
           {services.map((service, i) => {
             const getRevealClass = () => {
               if (!isVisible) {
@@ -88,30 +88,33 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
               <div
                 key={i}
                 className={`group transition-all duration-700 ${getRevealClass()}`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                style={{ transitionDelay: `${i * 150}ms` }}
               >
-                <div className="mb-1 flex items-center gap-2">
+                <div className="mb-1 flex items-center gap-3">
                   <div className="h-px w-6 bg-foreground/30 transition-all duration-300 group-hover:w-10 group-hover:bg-foreground/50" />
-                  <span className="font-mono text-[10px] text-foreground/60">0{i + 1}</span>
                 </div>
-                {service.image && (
-                  <div className="mb-1 overflow-hidden rounded-md border border-foreground/10 max-w-[70px]" style={{ aspectRatio: "16/9" }}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <h3 className="mb-0.5 font-sans text-xs font-semibold text-foreground md:text-sm transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
-                <p className="text-[11px] leading-snug text-foreground/80 md:text-xs">{service.description}</p>
+                <h3 className="mb-1 font-sans text-base font-semibold text-foreground md:text-lg transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
+                <p className="max-w-sm text-sm leading-snug text-foreground/80 md:text-base">{service.description}</p>
                 {service.price && (
-                  <p className="mt-0.5 font-mono text-[11px] font-semibold md:text-xs" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
+                  <p className="mt-1 font-mono text-sm font-semibold md:text-base" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
                 )}
               </div>
             )
           })}
+        </div>
+        <div className="flex flex-col gap-5 md:hidden">
+          {services.map((service, i) => (
+            <div key={i} className="group">
+              <div className="mb-1 flex items-center gap-3">
+                <div className="h-px w-6 bg-foreground/30" />
+              </div>
+              <h3 className="mb-1 font-sans text-base font-semibold text-foreground transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f472b6] group-hover:to-[#a78bfa] group-hover:bg-clip-text group-hover:text-transparent">{service.title}</h3>
+              <p className="text-sm leading-snug text-foreground/80">{service.description}</p>
+              {service.price && (
+                <p className="mt-1 font-mono text-sm font-semibold" style={{ color: "#fbbf24", textShadow: "0 0 12px rgba(251, 191, 36, 0.5), 0 0 24px rgba(251, 191, 36, 0.25)" }}>{service.price}</p>
+              )}
+            </div>
+          ))}
         </div>
 
         <div
