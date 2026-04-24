@@ -24,10 +24,7 @@ export function WorkSection() {
       category: "Эстетическая стоматология",
       year: "2025",
       direction: "left",
-      image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/2d378ddc-e475-4c5c-a481-8a79b6ac9bd7.jpg",
-      gallery: [
-        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/2d378ddc-e475-4c5c-a481-8a79b6ac9bd7.jpg",
-      ],
+      image: "",
     },
     {
       number: "02",
@@ -35,10 +32,7 @@ export function WorkSection() {
       category: "Имплантология",
       year: "2025",
       direction: "right",
-      image: "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/d9e46012-2582-4846-8a12-bdf56aff56eb.jpg",
-      gallery: [
-        "https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/d9e46012-2582-4846-8a12-bdf56aff56eb.jpg",
-      ],
+      image: "",
     },
     {
       number: "03",
