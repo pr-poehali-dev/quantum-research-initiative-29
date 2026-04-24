@@ -139,8 +139,8 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
         >
           <div className="flex-1 w-[260px] overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/84dc439d-d50a-4524-acea-dd4e2e7adc07.jpg"
-              alt="Имплантация — операция"
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/8c84e402-b8f3-484c-a24c-68fdc4ec2bb9.png"
+              alt="All-on-4 — зубы на четырёх имплантах"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
@@ -153,8 +153,8 @@ export function ImplantSection({ scrollToSection }: { scrollToSection?: (index: 
           </div>
           <div className="flex-1 w-[260px] overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/files/698f798f-6504-4c84-bd3d-9f1bd01732a7.jpg"
-              alt="Современная операционная"
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/15cf4312-5dbb-4fd7-a971-62101531ccb7.png"
+              alt="Строение импланта и зуба"
               className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
             />
           </div>
