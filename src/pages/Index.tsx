@@ -288,6 +288,9 @@ export default function Index() {
               <p className="font-mono text-xs text-foreground/90">Стоматологическая клиника · Рязань · Ул. Маяковского, 57</p>
             </a>
 
+            <h1 className="mb-4 max-w-2xl animate-in fade-in slide-in-from-bottom-4 font-sans text-3xl font-semibold leading-[1.1] tracking-tight text-foreground duration-1000 delay-100 md:text-5xl lg:text-6xl">
+              Стоматология в Рязани «Зубные Феи»
+            </h1>
             <p className="mb-8 max-w-2xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
                 Современная стоматология без боли и страха. Бережное лечение, протезирование, исправление прикуса и имплантация для всей семьи.
