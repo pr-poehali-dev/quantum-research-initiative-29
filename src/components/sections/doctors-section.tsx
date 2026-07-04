@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const doctors = [
   {
@@ -41,7 +42,9 @@ const doctors = [
 ]
 
 export function DoctorsSection() {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
 
   return (
     <section
