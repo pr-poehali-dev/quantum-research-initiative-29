@@ -22,7 +22,6 @@ export default function Index() {
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isHeroVideoOpen, setIsHeroVideoOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
@@ -247,52 +246,10 @@ export default function Index() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
-            Записаться
-          </MagneticButton>
-
-          <button
-            type="button"
-            aria-label="Открыть меню"
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md transition-colors hover:bg-foreground/25 md:hidden"
-          >
-            <Icon name="Menu" size={22} className="text-foreground" />
-          </button>
-        </div>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
+          Записаться
+        </MagneticButton>
       </nav>
-
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] flex flex-col bg-background/95 backdrop-blur-xl animate-in fade-in duration-300 md:hidden">
-          <div className="flex items-center justify-end px-6 py-6">
-            <button
-              type="button"
-              aria-label="Закрыть меню"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md transition-colors hover:bg-foreground/25"
-            >
-              <Icon name="X" size={22} className="text-foreground" />
-            </button>
-          </div>
-          <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-8 pb-10">
-            {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Хирургия", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
-              <button
-                key={item}
-                onClick={() => {
-                  scrollToSection(index)
-                  setIsMobileMenuOpen(false)
-                }}
-                className={`py-3 text-left font-sans text-2xl font-medium transition-colors ${
-                  currentSection === index ? "text-foreground" : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-          </nav>
-        </div>
-      )}
 
       <div
         ref={scrollContainerRef}
@@ -307,7 +264,7 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
             alt="Зубные феи"
-            className="absolute -left-2 top-8 w-[26vw] max-w-[7rem] animate-in fade-in duration-1000 md:left-4 md:top-6 md:w-[10vw] lg:left-8"
+            className="absolute -left-4 top-12 w-[20vw] max-w-[16rem] animate-in fade-in duration-1000 md:left-4 lg:left-8"
           />
           <div className="absolute right-6 top-36 h-[55vh] w-[28vw] max-w-sm animate-in fade-in duration-1000 md:right-12 lg:right-16">
             <img
