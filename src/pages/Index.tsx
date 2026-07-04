@@ -253,7 +253,7 @@ export default function Index() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex h-[50px] items-center justify-between border-b border-foreground/10 bg-background/70 px-4 backdrop-blur-md transition-opacity duration-700 md:h-auto md:border-0 md:bg-transparent md:px-12 md:py-6 md:backdrop-blur-none ${
+        className={`fixed left-0 right-0 top-0 z-50 flex h-[50px] items-center justify-between border border-foreground/20 bg-foreground/15 px-4 backdrop-blur-md transition-opacity duration-700 md:h-auto md:border-0 md:bg-transparent md:px-12 md:py-6 md:backdrop-blur-none ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -287,7 +287,11 @@ export default function Index() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-0">
-          <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
+          <MagneticButton
+            variant="secondary"
+            onClick={() => scrollToSection(11)}
+            className="max-md:!border-foreground/20 max-md:!bg-foreground/15 max-md:!px-4 max-md:!py-1.5 max-md:!text-white"
+          >
             Записаться
           </MagneticButton>
 
@@ -295,7 +299,7 @@ export default function Index() {
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Открыть меню"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 text-foreground transition-colors hover:bg-foreground/25 md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 text-white transition-colors hover:bg-foreground/25 md:hidden"
           >
             <Icon name="Menu" size={20} />
           </button>
