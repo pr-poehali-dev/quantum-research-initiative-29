@@ -1,8 +1,11 @@
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { MagneticButton } from "@/components/magnetic-button"
 
 export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
 
   return (
     <section
@@ -10,15 +13,15 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
       data-section
       className="flex w-full shrink-0 flex-col justify-center px-6 py-12 md:h-screen md:w-screen md:snap-start md:items-center md:py-0 md:pt-0 md:px-12 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl flex gap-6 lg:gap-8 items-stretch h-[calc(100vh-5rem)] md:h-[calc(100vh-3rem)] py-4">
-        <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl flex flex-col gap-6 lg:gap-8 md:flex-row md:items-stretch md:h-[calc(100vh-3rem)] py-4">
+        <div className="flex-1 min-w-0 flex flex-col justify-center md:overflow-hidden">
         <div
           className={`mb-3 transition-all duration-700 md:mb-4 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
           <h2
-            className="mb-1 font-sans text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
+            className="mb-1 font-sans text-4xl font-bold tracking-tight md:text-4xl lg:text-5xl"
             style={{
               background: "linear-gradient(135deg, #f472b6, #a78bfa)",
               WebkitBackgroundClip: "text",
@@ -29,13 +32,13 @@ export function ChildrenSection({ scrollToSection }: { scrollToSection?: (index:
           >
             Детская стоматология
           </h2>
-          <p className="mb-3 text-sm font-semibold text-foreground md:text-base">Бережно, без стресса, с заботой</p>
+          <p className="mb-3 text-base font-semibold text-foreground md:text-base">Бережно, без стресса, с заботой</p>
 
           <div className="flex flex-col gap-2 md:flex-row md:items-start md:gap-4">
             <div className="inline-flex flex-col gap-1 rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2">
               <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/40">Приём ведёт</span>
               <div>
-                <p className="text-xs font-semibold text-foreground md:text-sm">
+                <p className="text-sm font-semibold text-foreground md:text-sm">
                   Краснова Александра Васильевна
                   <span className="ml-1 font-normal text-foreground/50">· стаж 15 лет</span>
                 </p>
