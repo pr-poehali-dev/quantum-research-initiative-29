@@ -5,6 +5,7 @@ export function useReveal(threshold = 0.3) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -12,7 +13,8 @@ export function useReveal(threshold = 0.3) {
         }
       },
       {
-        threshold,
+        threshold: isMobile ? 0 : threshold,
+        rootMargin: isMobile ? "0px 0px -15% 0px" : "0px",
         root: null,
       },
     )

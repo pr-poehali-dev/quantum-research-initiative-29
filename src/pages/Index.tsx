@@ -303,7 +303,7 @@ export default function Index() {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] flex flex-col bg-background/95 backdrop-blur-xl animate-in fade-in duration-200 md:hidden">
+        <div className="fixed inset-0 z-[60] flex flex-col border border-foreground/20 bg-foreground/15 backdrop-blur-md animate-in fade-in duration-200 md:hidden">
           <div className="flex h-[50px] items-center justify-between border-b border-foreground/10 px-4">
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
@@ -327,8 +327,8 @@ export default function Index() {
                   setIsMobileMenuOpen(false)
                   scrollToSection(index)
                 }}
-                className={`py-3 text-left font-sans text-2xl font-medium transition-colors ${
-                  currentSection === index ? "text-foreground" : "text-foreground/70 hover:text-foreground"
+                className={`py-3 text-left font-sans text-2xl font-medium text-white transition-colors drop-shadow ${
+                  currentSection === index ? "font-bold" : "text-white/80 hover:text-white"
                 }`}
               >
                 {item}
