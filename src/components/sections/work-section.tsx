@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import Icon from "@/components/ui/icon"
 
@@ -14,7 +15,9 @@ type Project = {
 }
 
 export function WorkSection() {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
   const [openProject, setOpenProject] = useState<Project | null>(null)
 
   const projects: Project[] = [

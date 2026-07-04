@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 import Icon from "@/components/ui/icon"
 
 const reviews = [
@@ -29,7 +30,9 @@ const reviews = [
 ]
 
 export function ReviewsSection() {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
 
   return (
     <section

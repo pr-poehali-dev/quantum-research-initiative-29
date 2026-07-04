@@ -1,10 +1,13 @@
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
 import Icon from "@/components/ui/icon"
 
 export function ContactSection() {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)

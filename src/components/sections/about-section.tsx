@@ -1,8 +1,11 @@
 import { MagneticButton } from "@/components/magnetic-button"
 import { useReveal } from "@/hooks/use-reveal"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function AboutSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
-  const { ref, isVisible } = useReveal(0.3)
+  const { ref, isVisible: reveal } = useReveal(0.3)
+  const isMobile = useIsMobile()
+  const isVisible = isMobile || reveal
 
   return (
     <section
