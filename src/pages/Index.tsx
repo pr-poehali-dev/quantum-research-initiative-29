@@ -15,6 +15,7 @@ import { OrthopedicsSection } from "@/components/sections/orthopedics-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import Icon from "@/components/ui/icon"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { useRef, useEffect, useState } from "react"
 
 export default function Index() {
@@ -22,6 +23,8 @@ export default function Index() {
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isHeroVideoOpen, setIsHeroVideoOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const isMobile = useIsMobile()
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
@@ -58,17 +61,32 @@ export default function Index() {
   }, [])
 
   const scrollToSection = (index: number) => {
-    if (scrollContainerRef.current) {
-      const sectionWidth = scrollContainerRef.current.offsetWidth
-      scrollContainerRef.current.scrollTo({
-        left: sectionWidth * index,
-        behavior: "smooth",
-      })
+    if (!scrollContainerRef.current) return
+
+    if (isMobile) {
+      const sections = scrollContainerRef.current.querySelectorAll("[data-section]")
+      const target = sections[index] as HTMLElement | undefined
+      if (target) {
+        scrollContainerRef.current.scrollTo({
+          top: target.offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
       setCurrentSection(index)
+      return
     }
+
+    const sectionWidth = scrollContainerRef.current.offsetWidth
+    scrollContainerRef.current.scrollTo({
+      left: sectionWidth * index,
+      behavior: "smooth",
+    })
+    setCurrentSection(index)
   }
 
   useEffect(() => {
+    if (isMobile) return
+
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY
       touchStartX.current = e.touches[0].clientX
@@ -109,9 +127,11 @@ export default function Index() {
         container.removeEventListener("touchend", handleTouchEnd)
       }
     }
-  }, [currentSection])
+  }, [currentSection, isMobile])
 
   useEffect(() => {
+    if (isMobile) return
+
     const handleWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault()
@@ -141,7 +161,7 @@ export default function Index() {
         container.removeEventListener("wheel", handleWheel)
       }
     }
-  }, [currentSection])
+  }, [currentSection, isMobile])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -149,6 +169,18 @@ export default function Index() {
 
       scrollThrottleRef.current = requestAnimationFrame(() => {
         if (!scrollContainerRef.current) {
+          scrollThrottleRef.current = undefined
+          return
+        }
+
+        if (isMobile) {
+          const sections = scrollContainerRef.current.querySelectorAll("[data-section]")
+          const scrollTop = scrollContainerRef.current.scrollTop + 60
+          let newSection = 0
+          sections.forEach((s, i) => {
+            if ((s as HTMLElement).offsetTop <= scrollTop) newSection = i
+          })
+          if (newSection !== currentSection) setCurrentSection(newSection)
           scrollThrottleRef.current = undefined
           return
         }
@@ -178,7 +210,7 @@ export default function Index() {
         cancelAnimationFrame(scrollThrottleRef.current)
       }
     }
-  }, [currentSection])
+  }, [currentSection, isMobile])
 
   return (
     <main className="relative h-screen w-full overflow-hidden bg-background">
@@ -221,11 +253,19 @@ export default function Index() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-opacity duration-700 md:px-12 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex h-[50px] items-center justify-between border-b border-foreground/10 bg-background/70 px-4 backdrop-blur-md transition-opacity duration-700 md:h-auto md:border-0 md:bg-transparent md:px-12 md:py-6 md:backdrop-blur-none ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div />
+        <button onClick={() => scrollToSection(0)} className="flex items-center md:hidden" aria-label="На главную">
+          <img
+            src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
+            alt="Зубные феи"
+            className="h-9 w-auto"
+          />
+        </button>
+
+        <div className="hidden md:block" />
 
         <div className="hidden items-center gap-8 md:flex">
           {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Хирургия", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
@@ -246,27 +286,74 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
-          Записаться
-        </MagneticButton>
+        <div className="flex items-center gap-2 md:gap-0">
+          <MagneticButton variant="secondary" onClick={() => scrollToSection(11)}>
+            Записаться
+          </MagneticButton>
+
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Открыть меню"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 text-foreground transition-colors hover:bg-foreground/25 md:hidden"
+          >
+            <Icon name="Menu" size={20} />
+          </button>
+        </div>
       </nav>
+
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] flex flex-col bg-background/95 backdrop-blur-xl animate-in fade-in duration-200 md:hidden">
+          <div className="flex h-[50px] items-center justify-between border-b border-foreground/10 px-4">
+            <img
+              src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
+              alt="Зубные феи"
+              className="h-9 w-auto"
+            />
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Закрыть меню"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 text-foreground transition-colors hover:bg-foreground/25"
+            >
+              <Icon name="X" size={20} />
+            </button>
+          </div>
+          <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6">
+            {["Главная", "Врачи", "Наши работы", "Терапия", "Детская", "Ортодонтия", "Имплантация", "Хирургия", "Ортопедия", "О клинике", "Отзывы", "Запись"].map((item, index) => (
+              <button
+                key={item}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  scrollToSection(index)
+                }}
+                className={`py-3 text-left font-sans text-2xl font-medium transition-colors ${
+                  currentSection === index ? "text-foreground" : "text-foreground/70 hover:text-foreground"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </nav>
+        </div>
+      )}
 
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex h-screen overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${
+        className={`relative z-10 flex h-screen flex-col overflow-y-auto overflow-x-hidden pt-[50px] transition-opacity duration-700 md:flex-row md:overflow-x-auto md:overflow-y-hidden md:pt-0 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
+        <section data-section className="flex w-full shrink-0 flex-col justify-end px-6 py-10 md:min-h-screen md:w-screen md:pb-24 md:pt-24 md:px-12">
           <img
             src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/d5f5d458-93f2-4ebf-a420-c7be70a80c69.png"
             alt="Зубные феи"
-            className="absolute -left-4 top-12 w-[20vw] max-w-[16rem] animate-in fade-in duration-1000 md:left-4 lg:left-8"
+            className="hidden animate-in fade-in duration-1000 md:absolute md:left-4 md:top-12 md:block md:w-[20vw] md:max-w-[16rem] lg:left-8"
           />
-          <div className="absolute right-6 top-36 h-[55vh] w-[28vw] max-w-sm animate-in fade-in duration-1000 md:right-12 lg:right-16">
+          <div className="mx-auto mb-6 h-[38vh] w-full max-w-xs animate-in fade-in duration-1000 md:absolute md:right-12 md:top-36 md:mx-0 md:mb-0 md:h-[55vh] md:w-[28vw] md:max-w-sm lg:right-16">
             <img
               src="https://cdn.poehali.dev/projects/9d515a8d-6162-4d67-834a-3a3c9c632b11/bucket/2d6241de-cb8a-4443-be6f-d00633c14190.jpg"
               alt="Врачи клиники"
@@ -344,7 +431,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500">
+          <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-in fade-in duration-1000 delay-500 md:block">
             <div className="flex items-center gap-2">
               <p className="font-mono text-xs text-foreground/80">Листайте вправо</p>
               <div className="flex h-6 w-12 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md">

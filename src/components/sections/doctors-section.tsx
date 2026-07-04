@@ -46,7 +46,8 @@ export function DoctorsSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-start px-6 pt-16 md:px-12 lg:px-16"
+      data-section
+      className="flex w-full shrink-0 flex-col justify-start px-6 py-10 md:h-screen md:w-screen md:snap-start md:items-start md:py-0 md:pt-16 md:px-12 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
